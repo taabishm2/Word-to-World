@@ -10,7 +10,7 @@ def _get_sample_scene():
                 {
                     "bundle_url": "https://example.com/asset_bundle",
                     "name": "asset_name",
-                    "scale":(1, 1, 1),
+                    "scale": (1, 1, 1),
                     "location": (1, 3, 2),
                     "rotation": (0, 0, 0),
                 }
@@ -26,6 +26,7 @@ def generate_initial_scene():
     # TODO: Call the LLM here with the provided prompt
     # (create another python file and call from here)
     # The LLM call should inclue the system prompt and the prompt provided in this request
+    # In response, return a JSON similar to the one returned by _get_sample_scene() 
     
     return jsonify(_get_sample_scene()), 200
 
