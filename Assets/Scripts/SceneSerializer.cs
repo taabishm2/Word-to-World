@@ -22,7 +22,8 @@ public class SceneSerializer : MonoBehaviour {
     
     2.
     Create a function which accepts a list of 'SerializedAsset' objects (representing all objects in the scene)
-    and serializes them to JSON
+    and serializes them to JSON -- this should be triggerred automatically when the user exits the game mode (if that
+    isn't possible, then create an in-game button that triggers this function manually)
 
     3. 
     Create a function which reads a serialized JSON file and converts it to a list of 'SerializedAsset' objects
