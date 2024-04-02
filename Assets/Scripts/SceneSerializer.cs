@@ -1,6 +1,24 @@
 using System.Collections;
 using UnityEngine;
+using System.IO;
 
+
+[System.Serializable]
+public class SerializedAsset
+{
+    public string assetName;
+    public Vector3 position;
+    public Vector3 scale;
+    public Quaternion rotation;
+
+    public SerializedAsset(string name, Vector3 pos, Vector3 scale, Quaternion rot)
+    {
+        assetName = name;
+        position = pos;
+        this.scale = scale;
+        rotation = rot;
+    }
+}
 public class SceneSerializer : MonoBehaviour {
 
     // TODO
@@ -36,6 +54,29 @@ public class SceneSerializer : MonoBehaviour {
     will have this function in the menu bar
     **/
 
+    private const string jsonFilePath = "Assets/SerializedAssets.json";
+    public static void serializeToJSON(){
+        Debug.Log("Save button clicked.");
+        List<SerializedAsset> serializedAssets = new List<SerializedAsset>();
+        GameObject[] objects = GameObject.FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in objects)
+        {
+            SerializedAsset asset = new SerializedAsset(obj.name, obj.transform.position, obj.transform.localScale, obj.transform.rotation);
+            serializedAssets.Add(asset);
+        }
+        string json = JsonUtility.ToJson(serializedAssets);
+        File.WriteAllText(jsonFilePath, json);
+        Debug.Log("Scene serialized to JSON.");
+    }
+
+    public Button saveButton; 
+
+    void Start()
+    {
+        Button btn = saveButton.GetComponent<Button>();
+        btn.onClick.AddListener(serializeToJSON);
+    }
 
 
 }
