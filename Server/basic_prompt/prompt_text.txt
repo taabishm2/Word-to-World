@@ -1,0 +1,13 @@
+I have a set of geometric shapes available as assets, including cubes of various sizes, circles of various sizes, and triangles of various sizes. Using these assets, create a representation of "ice cream".
+
+Available Assets:
+- Cube, various sizes
+- Circle, various sizes
+- Triangle, various sizes
+
+Objective: Ice Cream
+
+Create in json format the asset and the location to place the asset to represent an ice cream cone with the basic assets provided. Assume the shapes can be scaled to fit the representation as need.
+All the assets will be placed in the location provided in unity. Unity uses a coordinate system that describes the position of objects in a three-dimensional space. 
+Unity uses a left-handed coordinate system: the positive x-axis points to the right, the positive y-axis points up, and the positive z-axis points forward. Unity’s left-handed coordinate system means that the direction of rotation from the positive x-axis to the positive y-axis is counterclockwise when looking along the positive z-axis.
+
