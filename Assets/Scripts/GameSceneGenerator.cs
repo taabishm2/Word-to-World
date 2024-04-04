@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSceneGenerator : MonoBehaviour
 {
-    string bundleURL = "http://localhost:8000/shapes";
+
+    [SerializeField] private Button generateScene;
+    public string bundleURL = "http://localhost:8000/shapes";
     string assetName = "sphere";
 
     /* Algorithm */
@@ -19,14 +22,23 @@ public class GameSceneGenerator : MonoBehaviour
 
     void Start()
     {
+        generateScene.onClick.AddListener(GenerateScene);
+    }
 
+    private void GenerateScene() {
         StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
     }
 
     private void OnAssetLoaded(GameObject loadedGameObject)
     {
-        Instantiate(loadedGameObject);
+        GameObject instance = Instantiate(loadedGameObject);
         Debug.Log($"Successfully instantiated '{assetName}' from the asset bundle.");
+
+        // Set the specific location here
+        int xPos = UnityEngine.Random.Range(0, 3); // Generates a random integer between -5 and 5 (inclusive)
+        int yPos = UnityEngine.Random.Range(0, 3); // Generates a random integer between -5 and 5 (inclusive)
+
+        instance.transform.position = new Vector3(xPos, yPos, 2); // Change to your desired location
     }
 
     private void OnError(string error)
