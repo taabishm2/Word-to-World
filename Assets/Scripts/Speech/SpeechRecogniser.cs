@@ -30,6 +30,9 @@ public class SpeechRecogniser : MonoBehaviour
         startButton.onClick.AddListener(StartRecording);
         stopButton.onClick.AddListener(StopRecording);
         stopButton.interactable = false;
+
+        // Test LLM agent.
+        // StartCoroutine(HelperRoutines.SendLLMTextRequest("How to make an omelette?", apikey, OnAgentResponseReceived, OnError));
     }
 
     private void Update() {
@@ -52,7 +55,7 @@ public class SpeechRecogniser : MonoBehaviour
         Microphone.End(null);
         var samples = new float[position * clip.channels];
         clip.GetData(samples, 0);
-        bytes = EncodeAsWAV(samples, clip.frequency, clip.channels);
+        bytes = HelperRoutines.EncodeAsWAV(samples, clip.frequency, clip.channels);
         recording = false;
         SendRecording();
     }
@@ -65,7 +68,9 @@ public class SpeechRecogniser : MonoBehaviour
             voiceText.color = Color.white;
             voiceText.text = response;
             startButton.interactable = true;
-            StartCoroutine(SendRequest(voiceText.text));
+
+            // Send recongised text to 
+            StartCoroutine(HelperRoutines.SendLLMTextRequest(response, apikey, OnAgentResponseReceived, OnError));
         }, error => {
             voiceText.color = Color.red;
             voiceText.text = error;
@@ -73,80 +78,11 @@ public class SpeechRecogniser : MonoBehaviour
         });
     }
 
-    private void sendQuery(string inputText) {
-        HuggingFaceAPI.Conversation("hello, how are you?", response => {
-                string reply = conversation.GetLatestResponse();
-                agentText.text = $"Bot: {reply}";
-            }, error => {
-                agentText.text = $"Error: {error}";
-                agentText.color = Color.red;
-            }, conversation);
+    private void OnAgentResponseReceived(string response) {
+        agentText.text = response;
     }
 
-    IEnumerator SendRequest(string inputText)
-    {
-        // Define the URL
-        string url = "https://api.openai.com/v1/chat/completions";
-
-        // Define the JSON payload
-        string jsonPayload = "{\"model\":\"gpt-3.5-turbo\",\"messages\":[{\"role\":\"user\",\"content\":"+ inputText + "\"}],\"max_tokens\":300}"; 
-
-
-        // Create a new UnityWebRequest
-        UnityWebRequest request = new UnityWebRequest(url, "POST");
-
-        // Set the request body
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonPayload);
-        request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
-
-        // Set headers
-        request.SetRequestHeader("Content-Type", "application/json");
-        request.SetRequestHeader("Authorization", "Bearer " + apikey);
-
-        // Send the request
-        yield return request.SendWebRequest();
-
-        // Check for errors
-        if (request.result != UnityWebRequest.Result.Success)
-        {
-            Debug.Log("Error: " + request.error);
-            agentText.text = request.error;
-            agentText.color = Color.red;
-        }
-        else
-        {
-            if(request.downloadHandler == null) {
-                Debug.Log("request is null");
-            }
-            // Get the response
-            string response = request.downloadHandler.text;
-            // agentText.text = response;
-            Debug.Log("Response: " + response);
-        }
-    }
-
-    private byte[] EncodeAsWAV(float[] samples, int frequency, int channels) {
-        using (var memoryStream = new MemoryStream(44 + samples.Length * 2)) {
-            using (var writer = new BinaryWriter(memoryStream)) {
-                writer.Write("RIFF".ToCharArray());
-                writer.Write(36 + samples.Length * 2);
-                writer.Write("WAVE".ToCharArray());
-                writer.Write("fmt ".ToCharArray());
-                writer.Write(16);
-                writer.Write((ushort)1);
-                writer.Write((ushort)channels);
-                writer.Write(frequency);
-                writer.Write(frequency * channels * 2);
-                writer.Write((ushort)(channels * 2));
-                writer.Write((ushort)16);
-                writer.Write("data".ToCharArray());
-                writer.Write(samples.Length * 2);
-
-                foreach (var sample in samples) {
-                    writer.Write((short)(sample * short.MaxValue));
-                }
-            }
-            return memoryStream.ToArray();
-        }
+    private void OnError(string error) {
+        agentText.text = error;
     }
 }

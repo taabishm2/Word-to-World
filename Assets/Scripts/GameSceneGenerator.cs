@@ -1,11 +1,15 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Networking;
 
 public class GameSceneGenerator : MonoBehaviour
 {
 
     [SerializeField] private Button generateScene;
+
+    [SerializeField] private TextMeshProUGUI errorText;
     public string bundleURL = "http://localhost:8000/shapes";
     string assetName = "sphere";
 
@@ -23,15 +27,18 @@ public class GameSceneGenerator : MonoBehaviour
     void Start()
     {
         generateScene.onClick.AddListener(GenerateScene);
+        StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
     }
 
     private void GenerateScene() {
+        errorText.text = "Fetching assets...";
         StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
     }
 
     private void OnAssetLoaded(GameObject loadedGameObject)
     {
         GameObject instance = Instantiate(loadedGameObject);
+        errorText.text = $"Successfully instantiated '{assetName}' from the asset bundle.";   
         Debug.Log($"Successfully instantiated '{assetName}' from the asset bundle.");
 
         // Set the specific location here
@@ -44,5 +51,6 @@ public class GameSceneGenerator : MonoBehaviour
     private void OnError(string error)
     {
         Debug.LogError(error);
+        errorText.text = "this is the error " + error;
     }
 }
