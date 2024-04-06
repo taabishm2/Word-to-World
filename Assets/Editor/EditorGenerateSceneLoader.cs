@@ -2,12 +2,43 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.IO;
 
-public class EditorSceneLoader : Editor
+public class EditorGenerateSceneLoader : Editor
 {
-    [MenuItem("W2W/Generate Scene Loader")]
+    public static class JsonHelper
+{
+    public static T[] FromJson<T>(string json)
+    {
+        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+        return wrapper.Items;
+    }
+
+    public static string ToJson<T>(T[] array)
+    {
+        Wrapper<T> wrapper = new Wrapper<T>();
+        wrapper.Items = array;
+        return JsonUtility.ToJson(wrapper);
+    }
+
+    public static string ToJson<T>(T[] array, bool prettyPrint)
+    {
+        Wrapper<T> wrapper = new Wrapper<T>();
+        wrapper.Items = array;
+        return JsonUtility.ToJson(wrapper, prettyPrint);
+    }
+
+    [System.Serializable]
+    private class Wrapper<T>
+    {
+        public T[] Items;
+    }
+}
+    
     private const string jsonFilePath = "Assets/SerializedAssets.json";
-    static async void LoadAssetFromJSON()
+    [MenuItem("W2W/Generate Scene Loader")]
+    static void LoadAssetFromJSON()
     {
         if (!File.Exists(jsonFilePath))
         {
@@ -16,25 +47,29 @@ public class EditorSceneLoader : Editor
         }
 
         string json = File.ReadAllText(jsonFilePath);
-        List<SerializedAsset> serializedAssets = JsonUtility.FromJson<List<SerializedAsset>>(json);
-
+        Debug.Log(json);
+        SerializedAsset[] serializedAssets = JsonHelper.FromJson<SerializedAsset>(json);
+        Debug.Log(serializedAssets[0].assetName);
         foreach (SerializedAsset asset in serializedAssets)
         {
             GameObject obj = new GameObject(asset.assetName);
             obj.transform.position = asset.position;
             obj.transform.localScale = asset.scale;
             obj.transform.rotation = asset.rotation;
+
         }
 
         Debug.Log("Scene loaded from JSON.");
     }
 }
+[System.Serializable]
 public class SerializedAsset
 {
     public string assetName;
     public Vector3 position;
     public Vector3 scale;
     public Quaternion rotation;
+
 
     public SerializedAsset(string name, Vector3 pos, Vector3 scale, Quaternion rot)
     {

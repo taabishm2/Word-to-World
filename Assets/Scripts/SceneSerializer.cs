@@ -1,8 +1,10 @@
-using System.Collections;
+
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 
+public class SceneSerializer : MonoBehaviour {
 [System.Serializable]
 public class SerializedAsset
 {
@@ -19,8 +21,6 @@ public class SerializedAsset
         rotation = rot;
     }
 }
-public class SceneSerializer : MonoBehaviour {
-
     // TODO
 
     /**
@@ -55,28 +55,43 @@ public class SceneSerializer : MonoBehaviour {
     **/
 
     private const string jsonFilePath = "Assets/SerializedAssets.json";
-    public static void serializeToJSON(){
+  public static class JsonHelper
+{
+    public static T[] FromJson<T>(string json)
+    {
+        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+        return wrapper.Items;
+    }
+
+    public static string ToJson<T>(T[] array)
+    {
+        Wrapper<T> wrapper = new Wrapper<T>();
+        wrapper.Items = array;
+        return JsonUtility.ToJson(wrapper);
+    }
+
+    [System.Serializable]
+    private class Wrapper<T>
+    {
+        public T[] Items;
+    }
+}
+    public static void onButtonClick(){
         Debug.Log("Save button clicked.");
         List<SerializedAsset> serializedAssets = new List<SerializedAsset>();
         GameObject[] objects = GameObject.FindObjectsOfType<GameObject>();
-
+        
         foreach (GameObject obj in objects)
         {
             SerializedAsset asset = new SerializedAsset(obj.name, obj.transform.position, obj.transform.localScale, obj.transform.rotation);
             serializedAssets.Add(asset);
         }
-        string json = JsonUtility.ToJson(serializedAssets);
+        string json = JsonHelper.ToJson(serializedAssets.ToArray());
+        Debug.Log(json);
         File.WriteAllText(jsonFilePath, json);
         Debug.Log("Scene serialized to JSON.");
     }
 
-    public Button saveButton; 
-
-    void Start()
-    {
-        Button btn = saveButton.GetComponent<Button>();
-        btn.onClick.AddListener(serializeToJSON);
-    }
 
 
 }
