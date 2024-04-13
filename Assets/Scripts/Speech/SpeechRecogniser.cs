@@ -16,6 +16,8 @@ public class SpeechRecogniser : MonoBehaviour
     [SerializeField] private TextMeshProUGUI voiceText;
     [SerializeField] private TextMeshProUGUI agentText;
 
+    public string imageUrl = "http://10.5.3.74:9000/receive_image";
+
     private Conversation conversation = new Conversation();
 
     private AudioClip clip;
@@ -32,6 +34,7 @@ public class SpeechRecogniser : MonoBehaviour
         stopButton.interactable = false;
 
         // Test LLM agent.
+        StartCoroutine(TakeScreenshotAndQuery("What's in the picture?"));
         // StartCoroutine(HelperRoutines.SendLLMTextRequest("How to make an omelette?", apikey, OnAgentResponseReceived, OnError));
     }
 
@@ -84,5 +87,40 @@ public class SpeechRecogniser : MonoBehaviour
 
     private void OnError(string error) {
         agentText.text = error;
+    }
+
+    IEnumerator TakeScreenshotAndQuery(string query)
+    {
+        yield return new WaitForEndOfFrame();
+
+        // Capture the screenshot
+        Texture2D screenshotTexture = ScreenCapture.CaptureScreenshotAsTexture();
+
+        // Convert the texture to bytes
+        byte[] screenshotBytes = screenshotTexture.EncodeToPNG();
+
+        Debug.Log("Got screenshot!!");
+        
+        // Create a UnityWebRequest
+        using (UnityWebRequest www = new UnityWebRequest(imageUrl, "POST"))
+        {
+            // Set the request method and upload handler
+            www.method = "POST";
+            www.uploadHandler = new UploadHandlerRaw(screenshotBytes);
+            www.uploadHandler.contentType = "image/png";
+
+            // Send the request
+            yield return www.SendWebRequest();
+
+            // Check for errors
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Error uploading screenshot: " + www.error);
+            }
+            else
+            {
+                Debug.Log("Screenshot uploaded successfully");
+            }
+        }
     }
 }

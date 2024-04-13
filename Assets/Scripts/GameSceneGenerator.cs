@@ -27,7 +27,7 @@ public class GameSceneGenerator : MonoBehaviour
     void Start()
     {
         generateScene.onClick.AddListener(GenerateScene);
-        StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
+        // StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
     }
 
     private void GenerateScene() {
