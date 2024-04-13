@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
@@ -11,53 +9,28 @@ using UnityEngine.UI;
 public class TakeScreenShot : MonoBehaviour
 {
     // If running locally, get ip address of the system using `ipconfig getifaddr en0`.
-    public string serverUrl = "http://10.5.3.74:9000/";
-    public string imageUrl = "http://10.5.3.74:9000/receive_image";
+    public string serverUrl = "http://127.0.0.1:9000/";
+    public string imageUrl = "http://127.0.0.1:9000/receive_image";
+
+    [SerializeField] public Button feedBackButton;
 
     [SerializeField] public TextMeshProUGUI text;
-
-    public InputActionProperty rightGripAction;
 
     public Camera snapshotCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        feedBackButton.onClick.AddListener(GetFeedback);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Get grip float values.
-        float rightGripValue = rightGripAction.action.ReadValue<float>();
-
-        if (rightGripValue > 0.5f) {
-            Debug.Log("I am sending hello.");
-            StartCoroutine(sendHello());
-            // StartCoroutine(TakeScreenshotAndSend());
-        }
     }
 
-    IEnumerator sendHello()
-    {
-        Debug.Log("Inside enumerator.");
-        using (UnityWebRequest request = UnityWebRequest.Get(serverUrl))
-        {
-            yield return request.SendWebRequest();
-
-            if (request.result == UnityWebRequest.Result.Success)
-            {
-                text.text = "Response from server:";
-                Debug.Log("Response from server:");
-                Debug.Log(request.downloadHandler.text);
-            }
-            else
-            {
-                text.text = "Failed to request API. Error: " + request.error;
-                Debug.LogError("Failed to request API. Error: " + request.error);
-            }
-        }
+    private void GetFeedback() {
+        StartCoroutine(TakeScreenshotAndQuery("what's in the image?"));
     }
 
     IEnumerator TakeScreenshotAndQuery(string query)
