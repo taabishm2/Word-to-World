@@ -22,6 +22,8 @@ public class TakeScreenShot : MonoBehaviour
     void Start()
     {
         feedBackButton.onClick.AddListener(GetFeedback);
+        // GetFeedback();
+        StartCoroutine(sendHello());
     }
 
     // Update is called once per frame
@@ -33,6 +35,27 @@ public class TakeScreenShot : MonoBehaviour
         StartCoroutine(TakeScreenshotAndQuery("what's in the image?"));
     }
 
+    IEnumerator sendHello()
+    {
+        Debug.Log("Inside enumerator.");
+        using (UnityWebRequest request = UnityWebRequest.Get(serverUrl))
+        {
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                text.text = "Response from server: " + request.downloadHandler.text;
+                Debug.Log("Response from server:");
+                Debug.Log(request.downloadHandler.text);
+            }
+            else
+            {
+                text.text = "Failed to request API. Error: " + request.error;
+                Debug.LogError("Failed to request API. Error: " + request.error);
+            }
+        }
+    }
+
     IEnumerator TakeScreenshotAndQuery(string query)
     {
         yield return new WaitForEndOfFrame();
@@ -42,6 +65,8 @@ public class TakeScreenShot : MonoBehaviour
 
         // Convert the texture to bytes
         byte[] screenshotBytes = screenshotTexture.EncodeToPNG();
+
+        text.text = "took screenshot!\n";
         
         // Create a UnityWebRequest
         using (UnityWebRequest www = new UnityWebRequest(imageUrl, "POST"))
@@ -57,10 +82,12 @@ public class TakeScreenShot : MonoBehaviour
             // Check for errors
             if (www.result != UnityWebRequest.Result.Success)
             {
+                text.text += "Error uploading screenshot: " + www.error;
                 Debug.Log("Error uploading screenshot: " + www.error);
             }
             else
             {
+                text.text += "Screenshot uploaded successfully";
                 Debug.Log("Screenshot uploaded successfully");
             }
         }
