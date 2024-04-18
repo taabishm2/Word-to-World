@@ -7,24 +7,23 @@ app = Flask(__name__)
 
 def _get_sample_scene():
     return {
-        "scene": {
-            "id": 1, # Could use to store state about the scene
-            "assets": [
-                {
-                    "bundle_url": "https://example.com/asset_bundle",
-                    "name": "asset_name",
-                    "scale": (1, 1, 1),
-                    "location": (1, 3, 2),
-                    "rotation": (0, 0, 0),
-                }
-            ]
-        }
+        "assets": [
+            {
+                "bundle_url": "http://34.133.232.227:8000/shapes",
+                "name": "sphere",
+                "scale": (1, 1, 1),
+                "position": {"x": 1, "y": 3, "z": 2},
+                "rotation": (0, 0, 0),
+            }
+        ]
     }
 
-@app.route('/create-scene', methods=['POST'])
+@app.route('/create_scene', methods=['PUT'])
 def generate_initial_scene():
     data = request.get_json()
     prompt = data['prompt']
+    
+    print(f"user request {data}")
     
     # TODO: Call the LLM here with the provided prompt
     # (create another python file and call from here)
@@ -32,6 +31,10 @@ def generate_initial_scene():
     # In response, return a JSON similar to the one returned by _get_sample_scene() 
     
     return jsonify(_get_sample_scene()), 200
+
+@app.route('/')
+def hello_world(): 
+    return "<html>Hello world</html>"
 
 # Define the route for the POST request to upload an image
 @app.route('/receive_image', methods=['POST'])
@@ -74,4 +77,4 @@ def upload_file():
     return jsonify({'message': 'Image uploaded successfully', 'file_path': file_path})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=9000)
+    app.run(host='0.0.0.0')
