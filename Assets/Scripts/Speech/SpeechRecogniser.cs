@@ -16,13 +16,13 @@ public class SpeechRecogniser : MonoBehaviour
     [SerializeField] private TextMeshProUGUI voiceText;
     [SerializeField] private TextMeshProUGUI agentText;
 
-    private Conversation conversation = new Conversation();
-
     private AudioClip clip;
     private byte[] bytes;
     private bool recording;
 
     public string apikey;
+
+    public GameSceneGenerator gameSceneGenerator;
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +69,8 @@ public class SpeechRecogniser : MonoBehaviour
             voiceText.text = response;
             startButton.interactable = true;
 
-            // Send recongised text to 
+            // Send recongised text to server.
+            gameSceneGenerator.UserInput(response);
             StartCoroutine(HelperRoutines.SendLLMTextRequest(response, apikey, OnAgentResponseReceived, OnError));
         }, error => {
             voiceText.color = Color.red;

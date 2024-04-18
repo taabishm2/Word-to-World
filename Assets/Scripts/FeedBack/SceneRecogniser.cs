@@ -23,7 +23,7 @@ public class TakeScreenShot : MonoBehaviour
     {
         feedBackButton.onClick.AddListener(GetFeedback);
         // GetFeedback();
-        StartCoroutine(sendHello());
+        // StartCoroutine(sendHello());
     }
 
     // Update is called once per frame
