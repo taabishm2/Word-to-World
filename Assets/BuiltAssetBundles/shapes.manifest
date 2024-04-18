@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 766647245
+CRC: 1268661398
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 977cd3d7bc03b23bc7faa137c2766a1b
+    Hash: 4af35b4e06a46d02a4f573ef6cca2c23
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 52d98f26dac52af9a4aebe27e283fb1e
+    Hash: 57b1f72988ec42141ed4934bc726e918
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 977cd3d7bc03b23bc7faa137c2766a1b
+    Hash: 4af35b4e06a46d02a4f573ef6cca2c23
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -28,7 +28,15 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 135
   Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Models/Sphere.prefab
+- Assets/Models/cylinder.prefab
+- Assets/Materials/red.mat
+- Assets/Models/capsule.prefab
+- Assets/Models/red sphere.prefab
+- Assets/Materials/Skin.mat
+- Assets/Materials/blue.mat
+- Assets/Models/blue sphere.prefab
 Dependencies: []

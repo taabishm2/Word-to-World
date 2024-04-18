@@ -1863,6 +1863,7 @@ MonoBehaviour:
   generateSceneUrl: http://34.133.232.227:5000/create_scene
   userOrigin: {fileID: 1218337230}
   sceneBuilder: {fileID: 1332450271}
+  InitialPrompt: create a scene with sphere and a cylinder, next to each other
 --- !u!4 &1274657901
 Transform:
   m_ObjectHideFlags: 0
@@ -2613,6 +2614,74 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &70925031910800928
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.218
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.101
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1745743271309182360, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5560948200200828194, guid: 86fd66f3cd5df42259da80432dd3289a,
+        type: 3}
+      propertyPath: m_Name
+      value: Table
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86fd66f3cd5df42259da80432dd3289a, type: 3}
 --- !u!1001 &2801108366945109154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2731,3 +2800,4 @@ SceneRoots:
   - {fileID: 1469892101}
   - {fileID: 453501326}
   - {fileID: 2801108366945109154}
+  - {fileID: 70925031910800928}

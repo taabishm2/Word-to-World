@@ -20,6 +20,8 @@ public class GameSceneGenerator : MonoBehaviour
 
     public SceneBuilder sceneBuilder;
 
+    public string InitialPrompt = "create a scene with red sphere and a cylinder, next to each other";
+
     /* Functionalities */
     // 1. Generate scene based on user input.
     // 2. Enable user feedback to improve upon a generated scene.
@@ -29,7 +31,7 @@ public class GameSceneGenerator : MonoBehaviour
     {
         generateScene.onClick.AddListener(GenerateScene);
 
-        UserInput("generate 2 spheres");
+        UserInput(InitialPrompt);
         // StartCoroutine(sceneBuilder.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
     }
 

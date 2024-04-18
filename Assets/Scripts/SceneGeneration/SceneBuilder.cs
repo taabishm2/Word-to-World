@@ -95,7 +95,7 @@ public class SceneBuilder : MonoBehaviour
 
             Debug.Log("Spawning object from " + asset.bundle_url + " name " + asset.name);
 
-            yield return StartCoroutine(LoadAssetCoroutine(asset.bundle_url, asset.name, callback, onError));
+            yield return StartCoroutine(LoadAssetCoroutine("http://34.133.232.227:8000/shapes", asset.name, callback, onError));
         }
 
         onSuccess?.Invoke($"{assets.Length} assets successfully initialized.");
@@ -164,6 +164,18 @@ public class SceneBuilder : MonoBehaviour
 
     {
         GameObject instance = Instantiate(loadedGameObject);
+
+        // Apply the material to the instantiated object's renderer component
+        Renderer renderer = instance.GetComponent<Renderer>();
+        if (renderer != null && renderer.material != null)
+        {
+            // Set the Universal Render Pipeline Lit shader
+            Shader urpLitShader = Shader.Find("Universal Render Pipeline/Lit");
+            if (urpLitShader != null)
+            {
+                    renderer.material.shader = urpLitShader;
+            }
+        }
         
         instance.transform.position = position; // Change to your desired location
         instance.transform.eulerAngles = rotation; // Change to your desired location
