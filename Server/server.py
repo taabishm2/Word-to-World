@@ -91,18 +91,27 @@ def generate_scene(scene):
             The last three must be objects representing the 'x','y','z' values.",
         [],
     )
-
+    
     return json.loads(resp)
 
 
+# A test get route to check if the server is running
+@app.route("/", methods=["GET"])
+def home():
+    print("RUNNING")
+    return jsonify({"message": "Server is running"}), 200
+
 @app.route("/create-scene", methods=["POST"])
 def generate_initial_scene():
+    print("IN HERE")
     create_asset_db()
 
     data = request.get_json()
     scene = data["prompt"]
 
-    return jsonify(generate_scene(scene)), 200
+    response = generate_scene(scene)
+    print(response)
+    return jsonify(response), 200
 
 
 if __name__ == "__main__":
