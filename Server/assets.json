@@ -1,5 +1,41 @@
 {
   "assets": [
+        {
+          "bundle_url": "http://34.133.232.227:8000/shapes",
+          "name": "blue sphere",
+          "scale":  { "x": 1, "y": 1, "z": 1 },
+          "rotation": { "x": 0, "y": 45, "z": 0 },
+          "tags": ["shapes", "sphere", "blue"],
+          "vibe": "game",
+            "description": "A simple blue sphere object."
+      },
+    {
+          "bundle_url": "http://34.133.232.227:8000/shapes",
+          "name": "red sphere",
+          "scale":  { "x": 1, "y": 1, "z": 1 },
+          "rotation": { "x": 0, "y": 45, "z": 0 },
+          "tags": ["shapes", "sphere", "red"],
+          "vibe": "game",
+            "description": "A simple red sphere object."
+    },
+    {
+          "bundle_url": "http://34.133.232.227:8000/shapes",
+          "name": "cylinder",
+          "scale":  { "x": 1, "y": 1, "z": 1 },
+          "rotation": { "x": 0, "y": 45, "z": 0 },
+          "tags": ["shapes", "cylinder"],
+          "vibe": "game",
+            "description": "A simple cylinder object."
+    },
+    {
+          "bundle_url": "http://34.133.232.227:8000/shapes",
+          "name": "capsule",
+          "scale":  { "x": 1, "y": 1, "z": 1 },
+          "rotation": { "x": 0, "y": 45, "z": 0 },
+          "tags": ["shapes", "capsule"],
+          "vibe": "game",
+            "description": "A simple cylinder object."
+    },
     {
       "url": "myassets.com/house",
       "name": "house",
