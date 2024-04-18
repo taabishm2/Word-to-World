@@ -1,5 +1,5 @@
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 
@@ -50,7 +50,10 @@ public class EditorSceneLoader : Editor
             }
 
             // Set the specific location here
-            instance.transform.position = new Vector3(0, 0, 0); // Change to your desired location
+            int xPos = UnityEngine.Random.Range(0, 3); // Generates a random integer between -5 and 5 (inclusive)
+            int yPos = UnityEngine.Random.Range(0, 3); // Generates a random integer between -5 and 5 (inclusive)
+
+            instance.transform.position = new Vector3(xPos, yPos, 10); // Change to your desired location
             Undo.RegisterCreatedObjectUndo(instance, "Create instance from asset bundle");
             Selection.activeGameObject = instance;
 

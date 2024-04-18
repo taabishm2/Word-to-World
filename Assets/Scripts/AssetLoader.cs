@@ -9,7 +9,7 @@ public class AssetLoader : MonoBehaviour
         using (UnityWebRequest uwr = UnityWebRequestAssetBundle.GetAssetBundle(bundleURL))
         {
             yield return uwr.SendWebRequest();
-
+           
             if (uwr.result != UnityWebRequest.Result.Success)
             {
                 Debug.LogError($"Failed to download asset bundle: {uwr.error}");
@@ -22,6 +22,7 @@ public class AssetLoader : MonoBehaviour
                 if (bundle == null)
                 {
                     Debug.LogError("Failed to load AssetBundle!");
+                    onError?.Invoke("AssetBundle is NULL!");
                     yield break;
                 }
 
