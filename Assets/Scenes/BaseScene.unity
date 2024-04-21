@@ -1863,7 +1863,7 @@ MonoBehaviour:
   generateSceneUrl: http://34.133.232.227:5000/create_scene
   userOrigin: {fileID: 1218337230}
   sceneBuilder: {fileID: 1332450271}
-  InitialPrompt: create a scene with sphere and a cylinder, next to each other
+  InitialPrompt: create a scene with BLUE SPHERE and RED SPHERE, next to each other
 --- !u!4 &1274657901
 Transform:
   m_ObjectHideFlags: 0
