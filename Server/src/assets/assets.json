@@ -1,0 +1,58 @@
+{
+  "assets": [
+    {
+      "name": "bench",
+      "description": "An outdoor bench",
+      "scale": { "x": 9.7, "y": 9.7, "z": 9.7 },
+      "rotation": { "x": -90, "y": 0, "z": 0 },
+      "tags": ["furniture", "outdoor"],
+      "texture": "plain white",
+      "vibe": "outdoor"
+    },
+    {
+      "name": "bus",
+      "description": "A yellow school bus",
+      "scale": { "x": 1265.6, "y": 1265.6, "z": 1265.6 },
+      "rotation": { "x": -90, "y": 0, "z": 0 },
+      "tags": ["vehicle", "transport"],
+      "texture": "yellow",
+      "vibe": "shiny"
+    },
+    {
+      "name": "car",
+      "description": "A fancy sports car",
+      "scale": { "x": 194.6, "y": 194.6, "z": 194.6 },
+      "rotation": { "x": -90, "y": 0, "z": 0 },
+      "tags": ["vehicle", "sports-car"],
+      "texture": "blue",
+      "vibe": "fancy"
+    },
+    {
+      "name": "chair",
+      "description": "An outdoor chair for seating",
+      "scale": { "x": 470, "y": 470, "z": 470 },
+      "rotation": { "x": -90, "y": 0, "z": 0 },
+      "tags": ["furniture", "sitting"],
+      "texture": "white",
+      "vibe": "outdoor"
+    },
+    {
+      "name": "cottage",
+      "description": "A small, single floor, rectangular cottage",
+      "scale": { "x": 1, "y": 1, "z": 1 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "tags": ["house", "cottage"],
+      "texture": "white",
+      "vibe": "outdoor"
+    },
+    {
+      "name": "tank",
+      "description": "A military tank",
+      "scale": { "x": 3.5, "y": 3.5, "z": 3.5 },
+      "rotation": { "x": 0, "y": 0, "z": 0 },
+      "tags": ["war", "weapon"],
+      "texture": "white",
+      "vibe": "danger"
+    }
+  ]
+}

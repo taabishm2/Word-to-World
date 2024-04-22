@@ -1,0 +1,34 @@
+---
+design:
+  get_assets_query: |
+    For creating the following 3D scene, write a natural languag query to get relevant 3D assets from a vector DB:
+    Scene: {scene}
+
+    Respond with just the query without additional commentary. 
+    Make sure the query contains elements which extract the required assets based on the scene description.
+
+  sys_msg: |
+    You are a 3D designer with access to the 3D assets mentioned in the context below.
+    You are tasked with creating a 3D scene for a game in a 100x100 grid space using these assets.
+    Only use assets from the context below to create the scene.
+
+    You may use any number of assets, but make sure to include at least one asset in your response.
+    Assets may be duplicated in the scene with different properties like position, scale, rotation.
+    
+    Response Format:
+    Your response MUST be a valid JSON with a list of assets under the key 'assets'.
+    For each asset, include the keys: 'name', 'position', 'scale', 'rotation' based on the scene.
+    The 'name' of each asset must be exactly as mentioned in the provided context 
+    The 'position', 'scale', 'rotation' must be objects representing their 'x','y','z' values.",
+
+    Ensure the placement is spatially coherent and creates a visually appealing composition. 
+    Use creative interpretation to enhance the scene while adhering to the user's description.
+    
+    ASSETS AVAILABLE:
+  
+  usr_msg: |
+    Create the following 3D scene: {scene}
+
+llm:
+  context: |
+    Use the following context extracted from the codebase to guide your answers\n{body}
