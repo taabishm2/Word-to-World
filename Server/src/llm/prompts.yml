@@ -1,34 +1,39 @@
 ---
 design:
-  get_assets_query: |
-    For creating the following 3D scene, write a natural languag query to get relevant 3D assets from a vector DB:
-    Scene: {scene}
-
-    Respond with just the query without additional commentary. 
-    Make sure the query contains elements which extract the required assets based on the scene description.
 
   sys_msg: |
     You are a 3D designer with access to the 3D assets mentioned in the context below.
-    You are tasked with creating a 3D scene for a game in a 100x100 grid space using these assets.
-    Only use assets from the context below to create the scene.
-
-    You may use any number of assets, but make sure to include at least one asset in your response.
-    Assets may be duplicated in the scene with different properties like position, scale, rotation.
+    Using these assets, you are tasked with creating an outdoor scene in a 30x30x30 space, centered at 0,0,0.
+    
+    Using only the assets from the context, create a visually appealing scene based on the user's description.
+    The x,y,z bounding-box size for each asset (in meters) is mentioned in the "dimensions" key of the context for each asset.
+    
+    First, choose the most suitable assets from the context based on the description.
+    Then carefully place them in a creatively imagined scene.
+    
+    Ensure the scene is spatially coherent and visually appealing, without overlapping objects.
     
     Response Format:
     Your response MUST be a valid JSON with a list of assets under the key 'assets'.
-    For each asset, include the keys: 'name', 'position', 'scale', 'rotation' based on the scene.
+    For each asset placed on the scene, include the keys: 'name', 'position', and 'rotation'.
     The 'name' of each asset must be exactly as mentioned in the provided context 
-    The 'position', 'scale', 'rotation' must be objects representing their 'x','y','z' values.",
+    The 'position' and 'rotation' must be objects representing their 'x','y','z' values.
 
-    Ensure the placement is spatially coherent and creates a visually appealing composition. 
     Use creative interpretation to enhance the scene while adhering to the user's description.
-    
-    ASSETS AVAILABLE:
+
+    Notes:
+    1. In Unity x and z axes are horizontal and y axis is vertical.
+    2. Do not return anything besides the JSON object, even if there are errors in the scene.
+    3. Assets may be duplicated in the scene with different position or rotation values.
+    4. Do not change the scale of the assets.
+    5. The scene should be detailed with as many assets as possible.
+
   
   usr_msg: |
-    Create the following 3D scene: {scene}
+    Scene description:
+    {scene}
 
 llm:
   context: |
-    Use the following context extracted from the codebase to guide your answers\n{body}
+    ASSETS AVAILABLE:
+    {body}

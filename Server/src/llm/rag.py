@@ -5,7 +5,7 @@ import shutil
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 
-EMBEDDING_MODEL = "text-embedding-ada-002"
+EMBEDDING_MODEL = "text-embedding-3-large"
 VECTOR_DB_PATH = "src/db/assets_db"
 
 
@@ -13,6 +13,10 @@ def create_asset_db(overwrite=False, json_path="src/assets/assets.json"):
     if os.path.exists(VECTOR_DB_PATH) and not overwrite:
         return
 
+    print("*" * 50)
+    print("REBUILDING ASSET DATABASE")
+    print("*" * 50)
+    
     if os.path.exists(VECTOR_DB_PATH):
         shutil.rmtree(VECTOR_DB_PATH)
 

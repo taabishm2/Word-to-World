@@ -1,0 +1,477 @@
+FBX Name,Source,Width,Height,Depth,Scale,Description
+arch,halloween,4.218442,4.413949,0.769877,0.6,"Arch - A grayscale, stylized archway with two extended legs."
+arch_gate,halloween,4.218442,4.413949,0.769877,0.6,"Arch Gate - A grayscale, decorative archway with gate details resembling wrought iron."
+armchair,furniture,1.8,1.22406,1.6,0.7,Armchair - A simple blue armchair with a modern design.
+armchair_pillows,furniture,1.8,1.22406,1.6,0.7,Armchair with Pillows - A tan armchair featuring a minimalist design and a blue pillow.
+barrel,medieval,0.2014764,0.2117121,0.2014764,6,Barrel - A wooden barrel with metal bands
+Barrel_A,prototype,1,1,1,0.75,Barrel A - A red metallic barrel
+Barrel_B,prototype,1,1,1,0.75,Barrel B - A yellow metallic barrel
+Barrel_C,prototype,1,1,1,0.75,Barrel B - A blue metallic barrel
+barrel_large,dungeon,1.8,2,1.8,0.6,"Large Barrel - A large, brown barrel with reinforced bands and a closed top."
+barrel_large_decorated,dungeon,1.937957,2.556453,1.855444,0.6,"Large Decorated Barrel - A large, ornate barrel with metal accents and a complex locking mechanism on top."
+barrel_small,dungeon,1.001364,1.017664,1.001364,0.6,"Small Barrel - A small, brown barrel with a simplistic design and two bands."
+barrel_small_stack,dungeon,1.85014,1.770138,1,0.6,"Small Barrel Stack - Three small, brown barrels stacked with metal bands."
+barrier,dungeon,4,1.1,0.5,0.6,"Barrier - A simple, dual-layered gray road barrier."
+barrier_colum_half,dungeon,2.35,1.4,0.7,0.6,"Half Barrier - A half-length, dual-layered gray road barrier."
+barrier_column,dungeon,4,1.4,0.7,0.6,Column Barrier - Two gray road barriers arranged in a column-like structure.
+barrier_corner,dungeon,2.394975,1.4,2.394975,0.6,Corner Barrier - A set of gray road barriers arranged to form a corner.
+barrier_half,dungeon,2,1.1,0.5000001,0.6,Half Barrier (Different Angle) - A half-length road barrier viewed from a different angle.
+base,city,2,0.1000001,2,4,"Base - A flat, gray square base, possibly for models or statues."
+bed_decorated,dungeon,2.606322,1.700795,3.057248,0.6,Bed Decorated - A bed with a desk on the side
+bed_double_A,furniture,3.1,0.9999999,3,0.7,Double Bed A - A double bed with blue bedding and a split headrest.
+bed_double_B,furniture,3.1,0.9999999,3,0.7,Double Bed B - Another double bed with blue bedding and integrated side tables.
+bed_floor,dungeon,1.5,0.5626321,3,0.6,Bed Floor - A mattress and pillow directly on the floor without a bed frame.
+bed_frame,dungeon,1.5,1.062632,3,0.6,Bed Frame - A basic brown bed frame without a mattress.
+bed_single_A,furniture,1.6,0.9999999,3,0.7,Single Bed A - A single bed with a blue mattress and pillow.
+bed_single_B,furniture,1.6,0.9999999,3,0.7,"Single Bed B - Another single bed with a blue mattress, pillow, and a raised headrest."
+bench,halloween,2.000011,0.5,0.75,0.6,"Bench - A simple, brown wooden bench."
+bench,city,0.4,0.1,0.1500001,4,Bench 1 - A different brown wooden bench with a backrest.
+bench_decorated,halloween,2.000011,1.677272,1.016946,0.6,Decorated Bench - A wooden bench with armrests and decorative elements.
+bone_A,halloween,0.7069888,0.2760803,0.2006664,0.6,Bone A - A cartoon-style bone with two enlarged ends.
+bone_B,halloween,0.6063,0.174661,0.2866724,0.6,"Bone B - Another cartoon-style bone, slightly curved."
+bone_C,halloween,1.106989,0.2760803,0.2006664,0.6,Bone C - A third variant of the cartoon-style bone with a distinct bend.
+book_set,furniture,0.78,0.4999999,0.365,0.7,Book Set - A set of vertically arranged books in various colors.
+book_single,furniture,0.26,0.4999999,0.365,0.7,"Single Book - A single, thick orange book standing upright."
+bottle_A_brown,dungeon,0.3684101,0.8857132,0.3684101,0.6,Brown Bottle A - A tapered brown bottle with a round stopper.
+bottle_A_green,dungeon,0.3684101,0.8857132,0.3684101,0.6,Green Bottle A - A tapered green bottle with a round stopper.
+bottle_A_labeled_brown,dungeon,0.3684101,0.8857132,0.3684101,0.6,Labeled Brown Bottle A - A brown bottle with a label and round stopper.
+bottle_A_labeled_green,dungeon,0.3684101,0.8857132,0.3684101,0.6,Labeled Green Bottle A - A green bottle with a label and round stopper.
+bottle_B_brown,dungeon,0.5527547,0.8857132,0.5527547,0.6,Brown Bottle B - A bulbous brown bottle with a tapered neck and round stopper.
+bottle_B_green,dungeon,0.5527547,0.8857132,0.5527547,0.6,Green Bottle B - A bulbous green bottle with a tapered neck and round stopper.
+bottle_C_brown,dungeon,0.7370062,0.9061971,0.7370063,0.6,Brown Bottle C - A stout brown bottle with a round stopper.
+bottle_C_green,dungeon,0.7370062,0.9061971,0.7370063,0.6,Green Bottle C - A stout green bottle with a round stopper.
+Box_A,prototype,0.4561763,0.5088968,0.4631945,0.75,Box A - A closed plain brown cardboard box.
+box_A,city,0.2,0.1764012,0.203077,4,Box A 1 - A slightly larger closed plain brown cardboard box.
+Box_B,prototype,0.6000001,0.4022294,0.406154,0.75,"Box B - A closed brown cardboard box, longer in length."
+box_B,city,0.1520588,0.1696323,0.1543982,4,Box B 1 - A simple brown cardboard box with closed flaps.
+Box_C,prototype,0.8000001,0.4022294,0.6061541,0.75,Box C - A cardboard box with white labeling and sealed with tape.
+box_large,dungeon,1.5,1.5,1.5,0.6,"Large Box - A large, cube-shaped box with a hollow interior and thick edges."
+box_small,dungeon,1,1,1,0.6,Small Box - A small cube-shaped gray box with red interior lining.
+box_small_decorated,dungeon,1.489866,1.482832,1.487249,0.6,Decorated Small Box - A small cube box with decorative gears and three honey jars on top.
+box_stacked,dungeon,3.475275,3.308905,3.634748,0.6,Stacked Boxes - Two small gray cube boxes stacked atop one another.
+bucket_arrows,medieval,0.14,0.2312867,0.1423455,6,Bucket with Arrows - A red and gray bucket containing multiple arrows.
+bucket_empty,medieval,0.14,0.1250002,0.14,6,Empty Bucket - An empty red and gray bucket.
+bucket_water,medieval,0.14,0.1050002,0.14,6,Bucket with Water - A red and gray bucket filled with blue water.
+building_A,city,2,1.65,2,4,Building A - A red and blue building with a door and two windows.
+building_A_withoutBase,city,1.20674,1.550069,1.45,4,Building A without Rooftop - The same building as Building A but without its red rooftop.
+building_archeryrange_red,medieval,1.670634,1.791735,1.550816,6,Archery Building - A fantasy-styled archery range with a red roof and a target.
+building_B,city,2,1.65,2,4,Building B - A brick urban building with a blue roof and detailed windows.
+building_B_withoutBase,city,1.60674,1.550069,1.3,4,"Building B without Rooftop - The same urban building as Building B, but missing the roof."
+building_barracks_red,medieval,1.440005,1.640053,1.566075,6,Barracks Building - A red-roofed barracks building with multiple chimneys.
+building_blacksmith_red,medieval,1.287601,0.9851044,1.24515,6,Blacksmith Building - A red-roofed blacksmith shop with tools and an anvil outside.
+building_C,city,2,2.976621,2,4,"Building C - A tall, red and blue urban building with a flat roof."
+building_C_withoutBase,city,1.20674,2.250069,1.3,4,Building C - A large red and blue urban building with a flat roof with no base pavement.
+building_castle_red,medieval,1.975413,3.979206,2.256254,6,Castle Front Building - A castle-like structure with a red roof and multiple spires.
+building_church_red,medieval,1.028993,1.645036,1.155002,6,Church Front Building - A church-like building with a large front window and a red roof.
+building_D,city,2,2.97,2.020421,4,Building D - A modern building with green and beige coloring and a flat roof.
+building_D_withoutBase,city,1.60674,2.250069,1.3,4,Building D without Rooftop - The same modern building as Building D but without the roof.
+building_E,city,2.00674,2.35,2,4,Building E - A tall blue and brown building with a flat roof and an emergency exit stair on the side.
+building_E_withoutBase,city,2.00674,2.250069,1.45,4,"Building E without Rooftop - The same building as Building E, without the roof and stair details."
+building_F,city,2.00674,2.35,2,4,Building F - A red and brown building with multiple windows and a rooftop door.
+building_F_withoutBase,city,2.00674,2.25007,1.3,4,"Building F without Rooftop - The same building as Building F, missing the roof and door details."
+building_G,city,2.00674,2.976353,2,4,Building G - A blue and brown building with a large front window and an antenna on top.
+building_G_withoutBase,city,2.00674,2.250069,1.45,4,"Building G without Rooftop - The same building as Building G, without the rooftop and antenna."
+building_H,city,2.00674,3.05,2,4,Building H - A narrow blue and brown building with several balconies and a flat roof.
+building_H_withoutBase,city,2.00674,2.950069,1.3,4,"Building H without Rooftop - The same building as Building H, but with the roof removed."
+building_home_A_red,medieval,0.7919598,0.9300002,0.8536516,6,Building Home A - A small red-roofed house with a chimney and front entrance.
+building_home_B_red,medieval,0.8749282,1.28,1.098652,6,"Building Home B - A small house with a red roof, different style with an external chimney."
+building_lumbermill_red,medieval,1.366967,1.295001,1.329233,6,Lumbermill Building - A red-roofed lumbermill with a waterwheel and logs piled outside.
+building_market_red,medieval,1.799381,0.9816395,1.315603,6,Market Building Red - A red-roofed market structure with open stall fronts and awnings.
+building_mine_red,medieval,1.605553,1.136635,1.91996,6,"Mine Building Red - A compact, red and dark gray mine entrance with a wheelbarrow."
+building_tavern_red,medieval,1.171728,1.39665,1.332318,6,Tavern Building Red - A red and gray tavern building with barrels and a sign.
+building_tower_A_red,medieval,0.9932728,2.191735,1.153467,6,Tower A - A tall gray tower with a red conical roof and arrow-slit windows.
+building_tower_B_red,medieval,1.197396,2.485365,1.382633,6,Tower B - Similar to Tower A but with a stone texture and fewer windows.
+building_tower_base_red,medieval,0.9297925,1.5,1.111126,6,"Tower with Cannon - A gray tower with a red roof, featuring a mounted cannon."
+building_tower_catapult_red,medieval,0.9297925,1.617727,1.233331,6,Watermill Building - A large red-roofed building with a watermill attached.
+building_watermill_red,medieval,1.05,1.743008,1.235964,6,Windmill Building - A red-roofed windmill building with rotating sails.
+building_well_red,medieval,0.6517937,0.8260126,0.7507236,6,Medium Cabinet - A simple brown cabinet with four short legs and a flat top.
+building_windmill_red,medieval,1.12577,1.194638,0.7939395,6,"Medium Cabinet with Plant - The same cabinet as Medium Cabinet, with a green potted plant on top."
+bush,city,0.1893606,0.3805296,0.1990933,4,"Bush - A small, green, tree-like potted plant in a brown pot"
+cabinet_medium,furniture,2,1,1.001559,0.7,Medium Cabinet - A medium sized brown cabinet with a flat top.
+cabinet_medium_decorated,furniture,2.041633,1.827033,1.001559,0.7,Medium Cabinet Decorated - A medium sized brown cabinet with a book and a pot on its top.
+cabinet_small,furniture,1,1,1.001559,0.7,Small Cabinet - A smaller brown cabinet with a flat top.
+cabinet_small_decorated,furniture,1.047671,1.617515,1.103883,0.7,Small Cabinet Decorated - A small brown cabinet with a book and a pot on its top.
+cactus_medium_A,furniture,0.8799095,0.8272461,0.8368438,0.7,Medium Cactus A - A potted green cactus with two arms.
+cactus_medium_B,furniture,0.8799095,0.8272461,0.8368438,0.7,Medium Cactus B - A similar potted cactus with three arms.
+cactus_small_A,furniture,0.5,0.5516007,0.5,0.7,Small Cactus A - A small potted cactus with a single arm.
+cactus_small_B,furniture,0.5,0.5516007,0.5,0.7,Small Cactus B - A small potted cactus with two arms and a taller center.
+Can_A,prototype,0.3,0.4823188,0.3,0.75,Can A - A blue soda can with a silver top.
+Can_B,prototype,0.3,0.4823188,0.3,0.75,Can B - A red soda can with a silver top.
+candle,dungeon,0.3343711,0.872982,0.3292912,0.6,Candle - A tall white candle with a black wick.
+candle,halloween,0.300934,0.7856838,0.2963621,0.6,"Candle 1 - A tall, white, unlit candle with a black wick."
+candle_lit,dungeon,0.3343711,1.051081,0.3292912,0.6,"Candle Lit - The same white candle, now lit with a small flame."
+candle_melted,dungeon,0.3343711,0.7015395,0.3292912,0.6,"Candle Melted - A shorter, white candle that appears partially melted down."
+candle_melted,halloween,0.300934,0.6313855,0.2963621,0.6,"Candle Melted 1 - Another version of a melted white candle, slightly different shape."
+candle_thin,dungeon,0.1931889,0.872982,0.190254,0.6,"Candle Thin - A slimmer, white candle with a tall, thin form."
+candle_thin,halloween,0.17387,0.7856838,0.1712286,0.6,"Candle Thin 1 - A similar slimmer, white candle to Candle Thin, possibly a variant."
+candle_thin_lit,dungeon,0.1931889,1.051081,0.190254,0.6,Candle Thin Lit - A thin white candle with a lit flame at the top.
+candle_triple,dungeon,0.5011786,0.872982,0.3899242,0.6,Candle Triple - A unique candle with three wicks in a single base.
+candle_triple,halloween,0.4510608,0.7856838,0.3509318,0.6,"Candle Triple 1 - Another version of a triple-wicked candle, slightly different style."
+car_hatchback,city,0.4189609,0.3800217,0.806073,4,Car Sedan - A simple blue sedan with a classic four-door design.
+car_police,city,0.4189609,0.4238927,0.938073,4,Car Police - A police car with distinctive markings and a siren on top.
+car_sedan,city,0.4189609,0.3800217,0.938073,4,Car Hatchback - A red hatchback car with a compact design.
+car_stationwagon,city,0.4189609,0.3800217,0.938073,4,Car Station Wagon - A green station wagon with a longer body and roof racks.
+car_taxi,city,0.4189609,0.4457292,0.938073,4,Car Taxi - A yellow taxi cab with distinctive black and checkered striping.
+chair,dungeon,0.7500001,1.226506,0.7500135,0.6,"Chair - A basic, wooden chair with a red cushion and backrest."
+chair_A,furniture,0.75,1.258326,0.8451285,0.7,Chair A - A chair with a blue seat and back cushion and wooden frame.
+chair_A_wood,furniture,0.75,1.258326,0.8451285,0.7,Chair A Wood - A wooden chair similar to Chair A but without the cushions.
+chair_B,furniture,0.75,1.258326,0.8451285,0.7,Chair B - A chair with a brown seat and back cushion and wooden frame.
+chair_B_wood,furniture,0.75,1.258326,0.8451285,0.7,"Chair B Wood - A wooden chair similar to Chair B, with a slightly different design."
+chair_C,furniture,0.75,1.202943,0.9356215,0.7,Chair C - A plain blue chair with a modern design and metal legs.
+chair_stool,furniture,0.75,0.5,0.75,0.7,Chair Stool - A simple stool with a blue round seat and four wooden legs.
+chair_stool_wood,furniture,0.75,0.5,0.75,0.7,"Chair Stool Wood - A wooden stool, same design as Chair Stool but with a brown seat."
+chest,dungeon,1.7,0.9650022,1.910687,0.6,Chest - A brown treasure chest with a curved lid and metal accents.
+chest_gold,dungeon,1.7,1.205674,1.910687,0.6,"Chest Gold - A similar treasure chest to the first, but with golden metal accents."
+cloud_big,medieval,3.607193,1.945766,2.242156,6,"Cloud Big - A fluffy, large cartoon-style cloud."
+cloud_small,medieval,2.337803,1.839653,1.791678,6,Cloud Small - A smaller version of the cartoon-style cloud.
+coffin,halloween,2,1.322414,3,0.6,"Coffin - A dark, closed coffin with silver accents."
+coffin_decorated,halloween,2,0.9025096,3,0.6,Coffin Decorated - A similar closed coffin with intricate golden decorations and a cross on the lid.
+coin,dungeon,0.3600116,0.125006,0.3600117,0.6,Coin - A single gold coin with an embossed design.
+Coin_A,prototype,1,1,0.349191,0.75,Coin A - A gold coin with a yellow band around the edge.
+Coin_B,prototype,1,1,0.349191,0.75,Coin B - A silver coin with a darker band around the edge.
+Coin_C,prototype,1,1,0.349191,0.75,Coin C - A copper coin with a reddish band around the edge.
+coin_stack_large,dungeon,1.4365,1.156889,1.658682,0.6,Large Coin Stack - A large stack of gold coins in varying sizes.
+coin_stack_medium,dungeon,0.9933727,0.6406729,1.034109,0.6,Medium Coin Stack - A medium-sized stack of gold coins.
+coin_stack_small,dungeon,0.9591118,0.4782336,0.8963455,0.6,Small Coin Stack - A small pile of scattered gold coins.
+column,dungeon,0.7,1.4,0.7,0.6,Column - A simple stone column with a square base and capital.
+couch,furniture,3,1.22406,1.6,0.7,Couch - A comfortable blue couch with cushioned armrests.
+couch_pillows,furniture,3,1.22406,1.6,0.7,"Couch with Pillows - A similar couch to the previous, with the addition of two small yellow pillows."
+crate_A_big,medieval,0.21,0.21,0.21,6,Big Crate A - A large wooden crate with wide planks and dark metal accents.
+crate_A_small,medieval,0.14,0.14,0.14,6,Small Crate A - A smaller version of Crate A.
+crate_B_big,medieval,0.21,0.21,0.21,6,Big Crate B - A large wooden crate with narrow planks and light metal accents.
+crate_B_small,medieval,0.14,0.14,0.14,6,Small Crate B - A smaller version of Crate B.
+crate_long_A,medieval,0.4,0.15,0.2,6,Long Crate A - A long wooden crate filled with various fruits.
+crate_long_B,medieval,0.4,0.15,0.2,6,Long Crate B - A long wooden crate filled with various vegetables.
+crate_long_C,medieval,0.4,0.1985454,0.2,6,"Long Crate C - A similar long wooden crate to Crate B, but filled with baguettes."
+crate_long_empty,medieval,0.4,0.15,0.2,6,"Empty Long Crate - An empty, open long wooden crate."
+crate_open,medieval,0.331568,0.2056395,0.2,6,Open Crate - An open wooden crate without a lid.
+crates_stacked,dungeon,2.089184,2.142296,2.249401,0.6,Stacked Crates - Several wooden crates stacked on top of each other with bottles and a sack.
+crypt,halloween,6,8,8,0.6,Crypt - A stone crypt or mausoleum with a cross on the roof.
+Cube_Prototype_Large_A,prototype,4,4,4,0.75,Cube Prototype Blue - A solid blue cube with a glossy finish.
+Cube_Prototype_Large_B,prototype,4,4,4,0.75,Cube Prototype Grid - A blue cube with a grid overlay.
+Cube_Prototype_Small,prototype,2,2,2,0.75,Cube Prototype Grid - A blue cube with a grid overlay.
+Door_A,prototype,1.600001,2.8,0.5460619,0.75,Door A - A plain brown door with a silver handle.
+Door_A_Decorated,prototype,1.600001,2.8,0.6268618,0.75,Door A Decorated - A brown door with red panels and a decorative silver handle.
+Door_B,prototype,1.600001,2.8,0.5356935,0.75,Door B - A red door with a narrow vertical window and a reinforced frame.
+Dummy_Base,prototype,1.542507,1.248292,0.9934468,0.75,Dummy Base - A training dummy figure with a helmet and a round shield.
+dumpster,city,0.5659471,0.3172787,0.3527979,4,Dumpster - A green and gray dumpster with a lid slightly ajar.
+fence,halloween,4,2.2,0.5000001,0.6,"Fence - A simple, black iron fence."
+fence_broken,halloween,4,2.2,0.5000001,0.6,Broken Fence - A black iron fence with a broken and bent bar.
+fence_gate,halloween,4,3,0.5000001,0.6,Fence Gate - A portion of a black iron fence with an open gate.
+fence_pillar,halloween,0.5,2.2,0.5000001,0.6,Fence Pillar - A single pillar of a black iron fence with a capstone.
+fence_pillar_broken,halloween,0.5,1.502974,0.5,0.6,Broken Fence Pillar - A similar pillar to Fence Pillar but broken at the top.
+fence_seperate,halloween,4,2,0.1695589,0.6,Fence Separate - A standalone segment of black iron fence.
+fence_seperate_broken,halloween,4,2,0.1695589,0.6,Separate Fence Broken - A segment of black iron fence with broken bars.
+firehydrant,city,0.1354952,0.2245951,0.1313207,4,Fire Hydrant - A red fire hydrant with two side nozzles and a top cap.
+flag_blue,medieval,0.05500915,0.2774706,0.2639779,6,"Blue Flag - A flag on a pole, fluttering to the right, colored blue."
+flag_green,medieval,0.05500915,0.2774706,0.2639779,6,"Green Flag - Similar to the blue flag, fluttering in the same direction, colored green."
+flag_red,medieval,0.05500915,0.2774706,0.2639779,6,"Red Flag - A red flag on a pole, fluttering to the right."
+flag_yellow,medieval,0.05500915,0.2774706,0.2639779,6,"Yellow Flag - A yellow flag on a pole, fluttering to the right."
+Floor,prototype,4,0.5000001,4,0.75,"Floor - A simple, flat gray floor tile."
+Floor_Dirt,prototype,4,0.5300001,4,0.75,Floor Dirt - A square floor tile with a plain dirt texture.
+floor_dirt,halloween,4,0.5300001,4,0.6,"Dirt Grave Floor - A floor tile with a raised dirt mound, suggesting a grave."
+floor_dirt_grave,halloween,4,1.53,4,0.6,Large Dirt Floor - A larger square of ground with a dry dirt texture.
+floor_dirt_large,dungeon,4,0.2086062,4,0.6,Large Dirt Floor with Rocks - A large dirt floor tile with scattered rocks.
+floor_dirt_large_rocky,dungeon,4,0.3927926,4,0.6,Small Dirt Floor with Grass - A small dirt floor segment with a few green grass patches.
+floor_dirt_small,halloween,2,0.5300001,2,0.6,Small Dirt Floor - A small square of ground textured with dirt and a few small rocks.
+floor_dirt_small_A,dungeon,2,0.1864052,2,0.6,Small Dirt Floor A - Similar to Small Dirt Floor but with a slightly different dirt texture.
+floor_dirt_small_B,dungeon,2,0.1886348,2,0.6,"Small Dirt Floor B - Another variant of the small dirt floor, with distinct dirt patches."
+floor_dirt_small_C,dungeon,2,0.2086062,2,0.6,Small Dirt Floor C - A further variant with a mixture of dirt textures and rocks.
+floor_dirt_small_corner,dungeon,2.000012,0.1537911,2,0.6,"Small Dirt Floor D - Similar to the previous, with an added dirt texture."
+floor_dirt_small_D,dungeon,2,0.1384378,2,0.6,"Small Dirt Floor D - Similar to the previous, with an added dirt texture."
+floor_dirt_small_weeds,dungeon,2,0.2954758,2,0.6,Floor Dirt 1 - Similar to Floor Dirt but with a more compacted dirt texture.
+floor_foundation_allsides,dungeon,2.2,2,2.2,0.6,Foundation 1 - A gray concrete foundation with metal rods protruding.
+floor_foundation_corner,dungeon,2.1,2,2.1,0.6,Foundation 2 - Similar to Foundation 1 but with different detailing on the surface.
+floor_foundation_diagonal_corner,dungeon,2.1,2,2.1,0.6,Foundation 3 - A concrete foundation with a different pattern and texture from the first two.
+floor_foundation_front,dungeon,2,2,2.1,0.6,"Foundation 4 - A concrete foundation block with an array of small, square recesses."
+floor_foundation_front_and_back,dungeon,2,2,2.2,0.6,"Foundation 5 - Similar to Foundation 4, but with an assortment of different surface details."
+floor_foundation_front_and_sides,dungeon,2.2,2,2.1,0.6,"Foundation 5 - Similar to Foundation 4, but with an assortment of different surface details."
+Floor_Prototype,prototype,4,0.5000007,4,0.75,"Floor Prototype - A flat, blue, translucent floor panel."
+floor_tile_big_grate,dungeon,4,1.05,4,0.6,"Large Grate Tile - A large floor tile with a gray, grated texture."
+floor_tile_big_grate_open,dungeon,4,1.05,4,0.6,"Large Grate Tile Open - A large floor tile with a gray, grated texture."
+floor_tile_big_spikes,dungeon,4,2.100001,4,0.6,Big Grate with Spikes - A similar large grate tile featuring upright spikes.
+floor_tile_extralarge_grates,dungeon,8,1.13,8,0.6,"Extralarge Grate Floor - A large grate floor tile, likely a variant with a different pattern."
+floor_tile_extralarge_grates_open,dungeon,8,1.13,8,0.6,Extralarge Grate Floor - A gray floor tile with a grated design and open sections.
+floor_tile_grate,dungeon,4,1.03,2,0.6,Tile Floor with grated design
+floor_tile_grate_open,dungeon,4,1.03,2,0.6,Tile Floor with grated design and open design
+floor_tile_large,dungeon,4,0.15,4,0.6,Large Tile Floor - A large gray floor tile with a smooth surface.
+floor_tile_large_rocks,dungeon,4,0.6361739,4,0.6,"Large Red Floor Tile - A large floor tile with a red, rugged texture."
+floor_tile_small,dungeon,2,0.15,2,0.6,Small Tile Floor
+floor_tile_small_broken_A,dungeon,2,0.15,2,0.6,Small Tile Floor - A smaller gray floor tile with a rugged texture.
+floor_tile_small_broken_B,dungeon,2,0.15,2,0.6,Small Tile Floor Variant B - A variant of the small floor tile with a different texture pattern.
+floor_tile_small_corner,dungeon,2,0.15,2,0.6,Small Tile Floor Variant C - Another small floor tile with a unique texture.
+floor_tile_small_decorated,dungeon,2,0.7729821,2,0.6,Small Tile Floor Variant D - A small floor tile with a texture that includes small objects.
+floor_tile_small_weeds_A,dungeon,2,0.2954758,2,0.6,Small Tile with Grass - A small floor tile with patches of green grass on the corners.
+floor_tile_small_weeds_B,dungeon,2,0.2954758,2,0.6,Small Tile Floor with grass patches
+floor_wood_large,dungeon,4,0.15,4,0.6,Large Wood Floor Tile - A large floor tile with a wooden plank texture.
+floor_wood_large_dark,dungeon,4,0.15,4,0.6,Large Gray Wood Floor Tile - A large floor tile that resembles gray wooden planks.
+floor_wood_small,dungeon,2,0.15,2,0.6,Small Wood Floor Tile - A small floor tile with a wooden plank texture.
+floor_wood_small_dark,dungeon,2,0.15,2,0.6,Small Wood Floor - A small gray floor tile designed to mimic the look of wooden planks.
+grave_A,halloween,2,2.129019,1,0.6,Grave A - A simple gravestone with a circular top
+grave_A_destroyed,halloween,2.0774,2.106115,1.135107,0.6,Grave A Destroyed - A damaged and tilted gravestone on a grassy base.
+grave_B,halloween,2,2.200001,1,0.6,"Grave B - A simple, upright gravestone with no inscriptions."
+gravemarker_A,halloween,0.8059553,1.196102,0.2781825,0.6,"Gravemarker A - A dark, arched gravestone."
+gravemarker_B,halloween,0.8028616,1.179493,0.4131666,0.6,Gravemarker B - A cross-shaped gravestone.
+gravestone,halloween,1.4,1.6,0.4000001,0.6,Gravestone - A classic gravestone shape with a rounded top.
+hill_single_A,medieval,1.109908,0.3072677,0.8093148,6,Single Hill A - A model of a small hill with a flat top and a green texture.
+hill_single_B,medieval,0.9949992,0.4187097,1.36046,6,Single Hill B - A model of a small hill with a flat top and a green texture.
+hill_single_C,medieval,1.024381,0.5885832,1.324908,6,Single Hill C - A similar small hill model with a slightly different shape and green texture.
+hills_A,medieval,1.755344,0.7941573,1.737221,6,Hills A - A set of small hills with a boulders on it.
+hills_A_trees,medieval,1.755344,1.332131,1.737221,6,Hills A with Trees - A set of small hills with a few trees on the top.
+hills_B,medieval,1.473513,0.3659984,1.623605,6,Hills B - A slightly larger model of green hills with no additional decorations.
+hills_B_trees,medieval,1.473513,1.369169,1.623605,6,"Hills B with Trees - A model of hills similar to Hills B, but with a few trees."
+hills_C,medieval,1.527329,0.5547021,1.4736,6,"Hills C - Another model of green hills, with a different arrangement."
+hills_C_trees,medieval,1.696491,1.295341,1.899211,6,"Hills C with Trees - Similar to Hills C, but with trees added on the top."
+keg,dungeon,1.8,2.050724,2,0.6,Keg - A wooden keg with metal bands and a tap.
+keg_decorated,dungeon,3.519392,2.050725,2,0.6,"Decorated Keg - A similar wooden keg with metal bands, featuring two green bottles beside it."
+key,dungeon,0.8956595,0.402879,0.1418031,0.6,Key - A single key
+keyring,dungeon,1.031003,0.2613786,1.209349,0.6,Keyring - A group of simple metal keys on a keyring.
+keyring_hanging,dungeon,0.6796609,1.219533,0.383498,0.6,"Keyring Hanging - The same keyring with keys, shown hanging from a hook."
+ladder,medieval,0.2532198,0.7699999,0.05074733,6,Ladder - A straight brown wooden ladder with round rungs.
+lamp_standing,furniture,1,2.52,1,0.7,Standing Lamp - A tall floor lamp with a gray base and a white lampshade.
+lamp_table,furniture,1,1.021665,1,0.7,"Table Lamp - A small white lampshade that tapers towards the top, intended for a table."
+lantern_hanging,halloween,0.6400201,1.408576,0.6400201,0.6,"Hanging Lantern - An old-style lantern with a metal frame and glass panels, hanging from a hook."
+lantern_standing,halloween,0.6400201,0.9251918,0.6400201,0.6,"Standing Lantern - A similar old-style lantern to the hanging one, but designed to stand."
+mountain_A,medieval,1.801018,1.425385,1.876171,6,"Mountain A - A simple, rounded gray mountain model."
+mountain_A_grass,medieval,1.801018,1.500969,1.876171,6,"Mountain A with Grass - The same mountain model, now with patches of green grass."
+mountain_A_grass_trees,medieval,1.855376,2.176356,1.876171,6,"Mountain A with Trees - Mountain A again, this time with small green trees added."
+mountain_B,medieval,1.801018,1.76955,1.876171,6,"Mountain B - A larger, gray mountain model with multiple peaks."
+mountain_B_grass,medieval,1.801018,1.836353,1.876171,6,Mountain B with Grass - Mountain B with green grass on its slopes.
+mountain_B_grass_trees,medieval,1.801018,2.504627,1.876171,6,Mountain B with Grass - Mountain B with green grass and trees on its slopes.
+mountain_C,medieval,1.758618,1.508004,2.022986,6,"Mountain C - Another gray mountain model, more blocky in shape."
+mountain_C_grass,medieval,1.758618,1.554156,2.022986,6,Mountain C with Grass - The blocky Mountain C with patches of green grass.
+mountain_C_grass_trees,medieval,1.758618,2.112415,2.022986,6,"Mountain C with Trees - Mountain C again, now featuring green trees."
+pallet,medieval,0.3,0.08000005,0.3,6,Pallet - A flat wooden pallet for holding goods.
+Pallet_Large,prototype,4,0.5000001,4,0.75,Large Pallet - A larger version of the flat wooden pallet.
+Pallet_Small,prototype,2,0.5000001,2,0.75,"Small Pallet - A smaller, more compact wooden pallet."
+Pallet_Small_Decorated_A,prototype,2,1.5,2,0.75,Small Decorated Pallet - The small pallet stacked with blue water barrels.
+Pallet_Small_Decorated_B,prototype,2,3,2,0.75,Large Decorated Pallet - A larger pallet also stacked with blue water barrels.
+path_A,halloween,1.903187,0.1000021,1.883756,0.6,Path A - A winding gray stone path or stepping stones.
+path_B,halloween,1.88607,0.1000001,1.855668,0.6,Path B - A series of irregular gray stepping stones.
+path_C,halloween,1.85001,0.1000001,1.856617,0.6,"Path C - A similar path to Path B, with fewer and smaller stones."
+path_D,halloween,1.655618,0.1000001,1.706572,0.6,"Path D - A cluster of small, round stepping stones."
+pictureframe_large_A,furniture,1.01,1.2,0.2000001,0.7,"Large Picture Frame A - A large, thin, brown picture frame leaning against the wall."
+pictureframe_large_B,furniture,2,1.2,0.2000001,0.7,"Large Picture Frame - A large, thin, brown picture frame leaning against the wall."
+pictureframe_medium,furniture,0.7000001,0.9000001,0.2000001,0.7,Medium Picture Frame - A medium-sized version of the large picture frame.
+pictureframe_small_A,furniture,0.5000001,0.6000001,0.2000001,0.7,Small Picture Frame A - A small brown picture frame in portrait orientation.
+pictureframe_small_B,furniture,0.7000001,0.4400001,0.2000001,0.7,"Small Picture Frame B - Another small brown picture frame, but in landscape orientation."
+pictureframe_small_C,furniture,0.5000001,0.5000001,0.2000001,0.7,"Small Picture Frame C - Another small brown picture frame, but in landscape orientation."
+pictureframe_standing_A,furniture,0.5,0.6185388,0.3794698,0.7,"Standing Picture Frame - A small picture frame with a stand, intended for tabletop display."
+pictureframe_standing_B,furniture,0.7000001,0.468188,0.3570172,0.7,"Standing Picture Frame - A small picture frame with a stand, intended for tabletop display."
+pillar,dungeon,1.5,4,1.5,0.6,"Pillar - A tall, gray stone pillar with a detailed capital and base."
+pillar,halloween,1,4.4,1,0.6,Pillar 1 - A similar pillar with a simpler design and a two-tone color scheme.
+Pillar_A,prototype,0.6,4.1,0.6000002,0.75,"Pillar A - A modern, minimalist pillar with a sleek design."
+Pillar_B,prototype,1,4.1,1,0.75,Pillar B - A similar modern pillar to Pillar A but with a gold detail at the base.
+pillar_decorated,dungeon,2.232002,4,1.710164,0.6,Decorated Pillar - A detailed stone pillar with ornate carvings and a hanging lantern.
+pillow_A,furniture,0.65,0.2,0.5000001,0.7,"Pillow A - A beige, oblong-shaped pillow."
+pillow_B,furniture,0.65,0.2,0.5000001,0.7,"Pillow B - A blue, square-shaped pillow with a slightly puffed appearance."
+plaque,halloween,2,0.4,2,0.6,Plaque - A simple plaque
+plaque_candles,halloween,2,1.131196,2,0.6,Plaque with Candles - A dark gray commemorative plaque with three lit candles on top.
+plate,dungeon,0.9705765,0.1294091,0.9705765,0.6,"Plate - A simple, round, flat gray plate."
+plate_food_A,dungeon,1.024979,0.7875461,0.9706047,0.6,"Plate with Food - A plate with a slice of bread, a piece of cheese, and a ring of onion."
+plate_food_B,dungeon,0.9705765,0.2361052,0.9705765,0.6,"Plate with Food B - A plate with a fish, egg, and two slices of cucumber."
+plate_small,dungeon,0.4852883,0.129409,0.4852883,0.6,"Small Plate - A smaller, simple, empty gray plate."
+plate_stack,dungeon,0.9970545,0.5638733,1.001969,0.6,Stack of Plates - A stack of several identical gray plates.
+post,halloween,0.4236895,3.3,1.566403,0.6,"Post - A simple, vertical wooden post with a metal cap."
+post_lantern,halloween,0.6400201,4.608575,1.670008,0.6,Post with Lantern - The same type of post now holding a lantern on a hook.
+post_skull,halloween,0.8090783,4.586634,1.840714,0.6,Post with Skull - A similar post with a skull mounted on top.
+Primitive_Beam,prototype,4,0.9999999,1,0.75,Primitive Beam - A horizontal yellow beam.
+Primitive_Cube,prototype,4,4,4,0.75,Primitive Cube - A basic yellow cube.
+Primitive_Cube_Small,prototype,2,2,2,0.75,Primitive Cube Corner - A yellow cube with a corner missing.
+Primitive_Doorway,prototype,4,4,1,0.75,Primitive Doorway - A simple yellow frame representing a doorway.
+Primitive_Floor,prototype,4,1,4,0.75,Primitive Floor - A basic yellow floor panel.
+Primitive_Floor_Hole,prototype,4,1,4,0.75,"Primitive Floor Hole - A square wooden frame with a hole in the center, possibly a trapdoor."
+Primitive_Pillar,prototype,1,4,1,0.75,"Primitive Pillar - A tall, plain yellow pillar."
+Primitive_Slope,prototype,4,4,4,0.75,Primitive Slope High - A simple inclined plane in a light yellow color.
+Primitive_Slope_Half,prototype,4,4,4,0.75,Primitive Slope Low - A less steep version of the yellow inclined plane.
+Primitive_Slope_Half_InnerCorner,prototype,4,4,4,0.75,Primitive Slope Low - A less steep version of the yellow inclined plane.
+Primitive_Slope_Half_OuterCorner,prototype,4,4,4,0.75,Primitive Slope Low - A less steep version of the yellow inclined plane.
+Primitive_Slope_InnerCorner,prototype,4,4,4,0.75,Primitive Slope Inverse - A yellow inclined plane sloping in the opposite direction.
+Primitive_Slope_OuterCorner,prototype,4,4,4,0.75,Primitive Slope Steep - A steeply inclined yellow plane.
+Primitive_Stairs,prototype,4,4,4,0.75,Primitive Stairs - A simple set of yellow block stairs.
+Primitive_Stairs_Half,prototype,2,2,4,0.75,Primitive Stairs Corner - A yellow stairway turning a corner.
+Primitive_Wall,prototype,4,4,1,0.75,Primitive Wall - A vertical yellow wall panel.
+Primitive_Wall_Half,prototype,2,4,1,0.75,Primitive Wall Half - A half-height yellow wall panel.
+Primitive_Wall_OpenCorner,prototype,4,4,1,0.75,Primitive Wall Opening - A yellow wall segment with an opening or doorway.
+Primitive_Wall_Short,prototype,4,2,1,0.75,Primitive Wall Short - A short section of yellow wall.
+Primitive_Wall_Slope,prototype,4,4,1.000001,0.75,Primitive Wall Slope - A yellow wall with a sloped top edge.
+Primitive_Window,prototype,4,4,1,0.75,Primitive Window - A yellow wall section with a window cut out.
+pumpkin_orange,halloween,1.00174,0.7,1.00174,0.6,Pumpkin Orange - A classic orange pumpkin.
+pumpkin_orange_jackolantern,halloween,1.5,1.3,1.4,0.6,Pumpkin Orange Jack-O'-Lantern - An orange pumpkin carved into a Jack-O'-Lantern.
+pumpkin_orange_small,halloween,0.6000001,0.55,0.6,0.6,Pumpkin Orange - A small orange pumpkin.
+pumpkin_yellow,halloween,1.00174,0.7,1.00174,0.6,Pumpkin Yellow - A round yellow pumpkin.
+pumpkin_yellow_jackolantern,halloween,1.5,1.3,1.4,0.6,Pumpkin Yellow Jack-O'-Lantern - A yellow pumpkin carved into a Jack-O'-Lantern.
+pumpkin_yellow_small,halloween,0.6000001,0.55,0.6,0.6,"Pumpkin Yellow - Another yellow pumpkin, similar to the first."
+resource_lumber,medieval,0.6859426,0.2100011,0.3304957,6,Resource Lumber - A stack of cut lumber beams.
+resource_stone,medieval,0.4210935,0.2799979,0.3578505,6,Resource Stone - A pile of gray stone blocks.
+ribcage,halloween,0.8456031,0.8582255,0.7468308,0.6,Ribcage - A stylized bone ribcage.
+road_corner,city,2,0.1000001,2,4,Road Corner - A section of road with a curved corner and road markings.
+road_corner_curved,city,2,0.1000001,2,4,"Road Corner Curve - A curved road section with lane markings, more sharply curved than the previous."
+road_junction,city,2,0.1000001,2,4,Road Junction - A flat road section with intersection lines and pedestrian crossing markings.
+road_straight,city,2,0.1000001,2,4,Road Straight - A straight section of road with lane markings.
+road_straight_crossing,city,2,0.1000001,2,4,Road Straight Crosswalk - A straight road section with a crosswalk and lane markings.
+road_tsplit,city,2,0.1000001,2,4,Road T-Split - A road section where a T-junction is formed with road markings.
+rock_single_A,medieval,0.298218,0.06930105,0.2836222,6,Rock Single A - A solitary gray boulder.
+rock_single_B,medieval,0.2866158,0.1345855,0.2497495,6,Rock Single B - A solitary gray boulder.
+rock_single_C,medieval,0.3439037,0.1947812,0.3442043,6,Rock Single C - A solitary gray boulder.
+rock_single_D,medieval,0.2866158,0.1629313,0.2497495,6,Rock Single D - A solitary gray boulder.
+rock_single_E,medieval,0.4881413,0.1947812,0.3475191,6,Rock Single E - A solitary gray boulder.
+rubble_half,dungeon,3.999654,3.5,3,0.6,Rubble - A single block of rubble
+rubble_large,dungeon,8.129274,3.496088,3.18311,0.6,Rubble large - A larger collection of rubble blocks
+rug_oval_A,furniture,3,0.1000001,2,0.7,A yellow oval rug
+rug_oval_B,furniture,3,0.1000001,2,0.7,An orange oval rug
+rug_rectangle_A,furniture,3,0.1000001,2,0.7,A yellow rectangle rug
+rug_rectangle_B,furniture,3,0.1000001,2,0.7,An orange rectangle rug
+rug_rectangle_stripes_A,furniture,3,0.1000001,2,0.7,Rug Rectangle Striped - A striped rectangular rug in blue tones.
+rug_rectangle_stripes_B,furniture,3,0.1000001,2,0.7,Rug Rectangle Striped - A striped rectangular rug in blue tones.
+sack,medieval,0.1065243,0.06468081,0.159548,6,"Sack - A beige, closed sack, possibly containing grain or produce."
+shelf_A_big,furniture,2,0.4,0.5000001,0.7,"Shelf A Big - A large, brown wall-mounted shelf."
+shelf_A_small,furniture,1,0.4,0.5000001,0.7,Shelf A Small - A smaller version of the brown wall-mounted shelf.
+shelf_B_large,furniture,2,0.4000006,0.5000001,0.7,"Shelf B Large - A larger brown shelf with a different design, featuring side supports."
+shelf_B_large_decorated,furniture,2,0.8175155,0.5000001,0.7,"Shelf B Large Decorated - The same as Shelf B Large, but with books and a small red vase."
+shelf_B_small,furniture,1,0.4000006,0.5000001,0.7,Shelf B Small - A smaller version of the brown shelf with side supports.
+shelf_B_small_decorated,furniture,1,1.011601,0.5713373,0.7,"Shelf B Small Decorated - A small shelf with a plant, books, and decorative objects."
+shelf_large,dungeon,2,0.4499998,0.5,0.6,"Shelf Large - A simple, large, flat brown shelf."
+shelf_small,dungeon,1,0.3999999,0.5,0.6,Shelf Small - A smaller version of the simple flat brown shelf.
+shelf_small_candles,dungeon,1,0.9941986,0.5,0.6,Shelf Small Candles - A small shelf with two white candles.
+shelves,dungeon,2,1.95,0.5,0.6,"Shelves - A set of brown wall-mounted shelves, staggered."
+shrine,halloween,1.099093,2.4,1.099093,0.6,Shrine - A gray stone shrine or pedestal.
+shrine_candles,halloween,1.099093,1.789331,1.099093,0.6,Shrine Candles - The shrine with a white candle on top.
+skull,halloween,0.9175689,0.8982443,0.9071671,0.6,Skull - A brown human skull.
+skull_candle,halloween,0.9175689,1.187322,0.9361368,0.6,Skull with Candle - A skull with a candle mounted on top of its head.
+stairs,dungeon,5,5.1,4,0.6,Stairs - A set of gray stone stairs.
+stairs_narrow,dungeon,4,5.1,4,0.6,Stairs Narrow - A narrower set of the gray stone stairs.
+stairs_wall_left,dungeon,4,5.1,5,0.6,Stairs Wall Left - A set of gray stairs adjacent to a wall on the left.
+stairs_wall_right,dungeon,4,5.1,5,0.6,Stairs Wall Right - Similar stairs adjacent to a wall on the right.
+stairs_walled,dungeon,5,4,4,0.6,Stairs Walled - Stairs with walls on both sides.
+stairs_wide,dungeon,7,5.1,4,0.6,Stairs Wide - A wider set of gray stairs.
+stairs_wood,dungeon,3.3,4.05,6,0.6,Stairs Wood - Wooden stairs with a simple design.
+stairs_wood_decorated,dungeon,3.3,4.05,6,0.6,Stairs Wood Decorated - Wooden stairs with pots and greenery on the sides.
+stool,dungeon,0.7500001,0.5,0.7500115,0.6,Stool - A basic brown wooden stool.
+streetlight,city,0.269307,0.9599148,0.06902249,4,Streetlight - A classic streetlight with a single lamp on top.
+sword_shield,dungeon,2.232002,1.667447,0.3357424,0.6,Sword Shield - A wall-mounted sword and shield with a metallic finish.
+sword_shield_broken,dungeon,1.425642,1.962297,0.3357423,0.6,Sword Shield Broken - A wall-mounted broken sword and a damaged shield.
+sword_shield_gold,dungeon,2.232002,1.667447,0.3357424,0.6,Sword Shield Gold - A wall-mounted sword and shield with a golden sheen.
+table_long,dungeon,2,0.9999999,4,0.6,Table Long - A simple long wooden table.
+table_long_broken,dungeon,2.409197,1.266268,4.404514,0.6,"Table Long Broken - The same type of table, showing signs of wear or damage."
+table_long_decorated_A,dungeon,2.058643,1.885714,4,0.6,"Table Long Decorated - A long table with various items, including books and a bottle."
+table_long_decorated_C,dungeon,2,2.767568,4.02507,0.6,"Table Long Decorated 2 - Another decorated long table with different items, including dishes and a kettle."
+table_long_tablecloth,dungeon,2,0.9999999,4,0.6,Table Long - A long-height table with a blue tablecloth and decorated with items
+table_long_tablecloth_decorated_A,dungeon,2.058643,1.885714,4,0.6,Table Long - A long-height table with a blue tablecloth and decorated with items
+table_low,furniture,2.4,0.5000001,1.5,0.7,Table Low - A low-height table with a blue tablecloth.
+table_medium,prototype,2,0.8000001,1.5,0.75,Table Medium - A medium-sized table with a blue tablecloth.
+table_medium,dungeon,2,0.9999999,2,0.6,Table Medium 1 - A medium-sized wooden table without a tablecloth.
+table_medium,furniture,2,1,2,0.7,Table Medium 2 - Another medium-sized wooden table with subtle differences in design.
+table_medium_broken,dungeon,2.276716,0.9717633,2.428392,0.6,Table Medium Broken - A medium-sized table with a broken leg and fallen items.
+table_medium_Decorated,prototype,2,1.708896,1.5,0.75,"Table Medium Decorated - A medium table with books, a lantern, and a small pot."
+table_medium_decorated_A,dungeon,2,1.885714,2,0.6,Table Medium Tablecloth decorated - A medium-sized wooden table covered with a white tablecloth.
+table_medium_long,prototype,3,1,1.5,0.75,Table Medium Tablecloth - A medium-sized wooden table covered with a white tablecloth.
+table_medium_long,furniture,3,1,2,0.7,Table Medium Tablecloth - A medium-sized wooden table covered with a white tablecloth.
+table_medium_tablecloth,dungeon,2,0.9999999,2,0.6,Table Medium Tablecloth - A medium-sized wooden table covered with a white tablecloth.
+table_medium_tablecloth_decorated_B,dungeon,2,1.885714,2,0.6,"Table Medium Tablecloth Decorated - The same table, decorated with plates, a kettle, and cups."
+table_small,dungeon,1,1,1,0.6,"Table Small - A small, simple wooden table."
+table_small,furniture,1,1,1,0.7,"Table Small - A small, simple wooden table."
+table_small_decorated_A,dungeon,1.039017,1.6213,1.211239,0.6,"Table Small Decorated - The small table, now decorated with a candle and two goblets."
+table_small_decorated_B,dungeon,1.012519,2.156888,1,0.6,"Table Small Decorated 2 - Another version of the small table with a different set of decorations, including a stack of books."
+target,medieval,0.2393,0.3018002,0.1421177,6,Target - A classic circular archery target with red and white concentric circles.
+target,prototype,0.9999999,1,0.2,0.75,"Target 1 - Another circular archery target with a single red center, mounted on a simple stand."
+target_pieces_A,prototype,0.433019,0.5,0.2,0.75,"Target Pieces A - Fragmented pieces of a target, in shades of red and white."
+target_pieces_B,prototype,0.5,0.6830127,0.2,0.75,"Target Pieces B - Another set of fragmented target pieces, mainly in gray."
+target_pieces_C,prototype,0.2500063,0.5,0.2,0.75,"Target Pieces C - Additional fragmented pieces of a target, in white and red with a gray back."
+target_pieces_D,prototype,0.4330127,0.5,0.2,0.75,"Target Pieces D - More target pieces, predominantly gray with a partial red circle."
+target_pieces_E,prototype,0.5,0.6830126,0.2,0.75,Target Pieces E - A set of target pieces with a red and white edge.
+target_pieces_F,prototype,0.2500001,0.5,0.2,0.75,Target Pieces F - Pieces of a target featuring the complete red and white center.
+target_small,prototype,0.5,1.1,0.15,0.75,"Target Small - A small target on a stand, with red and white circles."
+target_stand_A,prototype,1,2,1.500001,0.75,Target Stand A - A sturdy wooden stand designed to hold a target.
+target_stand_A_Decorated,prototype,1.940144,2.441387,1.500001,0.75,Target Stand A Decorated - The same stand with a shield and two crossed swords displayed.
+target_stand_B,prototype,1,2,1.500001,0.75,Target Stand B - A different style of wooden stand for holding a target.
+target_wall_large_A,prototype,2,2,0.2,0.75,Target Wall Large - A large target mounted flat against a wall panel.
+target_wall_large_B,prototype,2,2,0.2,0.75,Target Wall Small - A smaller version of the wall-mounted target.
+target_wall_small,prototype,1.180094,1.14384,0.3257683,0.75,Target Wall Small - A smaller version of the wall-mounted target.
+tent,medieval,0.516,0.5160001,0.516,6,Tent - A simple brown camping tent with a triangular entrance.
+torch,dungeon,0.5502833,1.041605,0.5502833,0.6,Torch - A wall-mounted torch with a metal holder.
+torch_lit,dungeon,0.5502833,1.125793,0.5502833,0.6,"Torch Lit - The same torch, now lit with a flame."
+torch_mounted,dungeon,0.5502833,1.062467,0.6158405,0.6,"Torch Mounted - A torch mounted on a wooden post, unlit."
+trafficlight_A,city,0.1744318,0.7294859,0.1505679,4,"Traffic Light A - A traffic light on a post with green, yellow, and red lights, and an additional set of lights turned off."
+trafficlight_B,city,0.2790666,0.9599148,0.1505679,4,Traffic Light B - Similar to Traffic Light A but with the lights in a different configuration.
+trafficlight_C,city,0.7977366,0.9694854,0.2715856,4,Traffic Light C - A traffic light with a single green light illuminated.
+trash_A,city,0.1267738,0.05237695,0.1332969,4,"Trash A - A simple, dark trash bin."
+trash_B,city,0.06806181,0.04039031,0.07084157,4,"Trash B - Another dark trash bin, slightly different style."
+tree_dead_large,halloween,2.301622,5.066115,1.376554,0.6,"Tree Dead Large - A larger, bare, dead tree."
+tree_dead_large_decorated,halloween,2.301622,5.417021,1.614306,0.6,"Tree Dead Large Snow - The same large dead tree, now with snow on its branches."
+tree_dead_medium,halloween,1.808604,4.188985,0.4666851,0.6,Tree Dead Medium - A medium-sized dead tree.
+tree_dead_small,halloween,1.40882,2.986373,1.015049,0.6,"Tree Dead Small - A small, bare, dead tree."
+tree_pine_orange_large,halloween,4.759364,7.475125,4.154716,0.6,Tree Pine Orange Tall - A taller version of the stylized pine tree with orange foliage.
+tree_pine_orange_medium,halloween,3.329902,5.871869,3.120488,0.6,Tree Pine Orange Medium - A medium version of the stylized pine tree with orange foliage.
+tree_pine_orange_small,halloween,2.400739,4.042824,2.197503,0.6,Tree Pine Orange - A small stylized pine tree with orange foliage.
+tree_pine_yellow_large,halloween,4.759364,7.475125,4.154716,0.6,Tree Pine Yellow Tall - A taller version of the stylized pine tree with yellow foliage.
+tree_pine_yellow_medium,halloween,3.329902,5.871869,3.120488,0.6,Tree Pine Orange Yellow - A stylized pine tree with a mix of orange and yellow foliage.
+tree_pine_yellow_small,halloween,2.400739,4.042824,2.197503,0.6,Tree Pine Yellow - A stylized pine tree with yellow foliage.
+tree_single_A,medieval,0.5739741,1.196449,0.5470093,6,Tree Single A - A small green conical tree.
+tree_single_A_cut,medieval,0.1696763,0.3302405,0.161705,6,Tree Single A Cut - A cut version of Tree Single A with a flat top.
+tree_single_B,medieval,0.684882,1.212677,0.7201276,6,"Tree Single B - Another small green conical tree, different style."
+tree_single_B_cut,medieval,0.1807403,0.2366449,0.1900416,6,Tree Single B Cut - A cut version of Tree Single B with a flat top.
+trees_A_cut,medieval,1.663787,0.2096796,1.684707,6,"Trees A Cut - A group of small, cut tree models."
+trees_A_large,medieval,1.94516,0.9264265,1.96663,6,"Trees A Large - A cluster of larger, full green conical trees."
+trees_A_medium,medieval,1.751424,1.29535,1.814279,6,Trees A Medium - A medium-sized group of green conical trees.
+trees_A_small,medieval,1.426328,1.108944,1.435024,6,Trees A Small - A small cluster of miniature green conical trees.
+trees_B_cut,medieval,1.402096,0.173188,1.46063,6,Trees B Cut - A small cluster of cut tree models with a different style.
+trees_B_large,medieval,1.849264,1.174549,1.932482,6,"Trees B Large - A group of larger green trees, similar in style to Trees A."
+trees_B_medium,medieval,1.863832,1.174039,1.833176,6,"Trees B Medium - A medium-sized group of green trees, consistent with the Trees B style."
+trees_B_small,medieval,1.328375,0.9218701,1.138433,6,"Trees B Small - Smaller green trees, matching the Trees B style."
+trunk_large_A,dungeon,1.5,0.9999999,1.3,0.6,Trunk Large A - A large brown trunk or storage crate.
+trunk_large_B,dungeon,1.5,0.9999999,1.3,0.6,Trunk Large B - A second large trunk with a different design than Large A.
+trunk_large_C,dungeon,1.5,0.9999999,1.3,0.6,Trunk Large C - A third design variant for a large trunk.
+trunk_medium_A,dungeon,0.9530383,0.7264689,0.8750505,0.6,Trunk Medium A - A medium-sized brown trunk or wooden crate.
+trunk_medium_B,dungeon,0.9530383,0.7264689,0.8750505,0.6,"Trunk Medium B - A similar trunk to Medium A, with slight variations in design."
+trunk_medium_C,dungeon,0.9530383,0.7264689,0.8750505,0.6,"Trunk Medium C - Another medium trunk, with different design details."
+trunk_small_A,dungeon,0.6753589,0.4843126,0.583367,0.6,Trunk Small A - A small brown trunk or crate.
+trunk_small_B,dungeon,0.6753589,0.4843126,0.583367,0.6,"Trunk Small B - Another small trunk, with a design variation."
+trunk_small_C,dungeon,0.6753589,0.4843126,0.583367,0.6,"Trunk Small C - A third variant of the small trunk, with its own design features."
+Wall,prototype,4,4,0.5300007,0.75,Wall - A simple gray wall segment with a yellow line at the bottom.
+wall,dungeon,4,4,1,0.6,"Wall 1 - Another gray wall segment, with a different texture and no yellow line."
+wall_arched,dungeon,4,4,1.000001,0.6,Wall Arched - A wall segment with an arched top.
+wall_archedwindow_gated,dungeon,4,4,0.9999999,0.6,Wall Arched Window - A wall segment with an arched window cut out.
+wall_archedwindow_gated_scaffold,dungeon,4,4,0.9999999,0.6,"Wall Arched Window Decorated - The arched window wall segment, now with bars across the window."
+wall_archedwindow_open,dungeon,4,4,1,0.6,Wall Arched Window Decorated - A wall segment with a decorated arched window and bars.
+wall_broken,dungeon,4,4,0.9999999,0.6,Wall Broken - A wall segment with broken and missing pieces.
+wall_corner,dungeon,2.5,4,2.500061,0.6,Wall Corner - A corner wall segment with a solid fill.
+wall_corner_gated,dungeon,2.500015,4,2.500061,0.6,Wall Corner Gated - A corner wall segment with a gated window.
+wall_corner_scaffold,dungeon,2.5,4,2.500061,0.6,Wall Corner Scaffold - A corner wall segment with scaffolding.
+wall_corner_small,dungeon,1.500001,4,1.500062,0.6,"Wall Corner Small - A smaller, more narrow wall corner segment."
+wall_cracked,dungeon,4,4,1.25939,0.6,Wall Cracked - A wall segment with cracks and visible damage.
+wall_crossing,dungeon,4,4,4.000061,0.6,Wall Crossing - A wall segment with a crossing pattern and recessed sections.
+Wall_Decorated,prototype,4,4,0.9130682,0.75,Wall Decorated - A wall segment with ornamental details and a small window.
+Wall_Doorway,prototype,4,4,0.5300007,0.75,Wall Doorway - A wall segment with a doorway and a yellow highlight at the bottom.
+wall_doorway,dungeon,4,4,1.000001,0.6,Wall Doorway 1 - A similar wall segment with a doorway but no highlight.
+wall_doorway_scaffold,dungeon,4,4,1.000001,0.6,Wall Doorway Scaffold - A wall segment with a doorway and scaffolding on one side.
+wall_doorway_sides,dungeon,5.000001,4,4,0.6,Wall Doorway Side - A wall segment with a side cutout or doorway.
+wall_doorway_Tsplit,dungeon,8,4,2.500061,0.6,Wall Doorway with a T-split
+wall_endcap,dungeon,1.066905,4,0.9999999,0.6,Wall Gated - A wall segment with a gated window and a ledge.
+wall_gated,dungeon,4,4,0.9999999,0.6,Wall Endcap - A flat wall segment acting as an endcap with a small window.
+Wall_Half,prototype,2,4,0.5300007,0.75,Wall Half - A half-height wall segment with a window and a ledge.
+wall_half,dungeon,2,4,1.000001,0.6,Wall Half 1 - A similar half-height wall segment without a ledge.
+wall_half_endcap,dungeon,2,4,0.9999999,0.6,Wall Half Endcap - A half-height wall segment designed to cap the end of a wall.
+wall_half_endcap_sloped,dungeon,2,4,0.9999999,0.6,Wall Half Endcap Scaffold - A half-height wall endcap with scaffolding.
+wall_open_scaffold,dungeon,4,4,0.9999999,0.6,Wall Open Scaffold - A wall segment with an opening and scaffolding.
+wall_pillar,dungeon,4,4,1.5,0.6,Wall Pillar - A wall segment that features a pillar structure on the side.
+wall_scaffold,dungeon,4,4,0.9999999,0.6,Wall Scaffold - A wall segment with an attached scaffold.
+wall_shelves,dungeon,4,4,1.3676,0.6,Wall Shelves - A wall segment with attached shelves and various items.
+wall_sloped,dungeon,4,4,0.9999999,0.6,Wall Sloped - A wall segment with a sloping top.
+Wall_Target,prototype,4,4,0.9912977,0.75,Wall Target - A wall segment with a target and an arrow embedded in the bullseye.
+wall_Tsplit,dungeon,4,4,2.500062,0.6,Wall Tsplit - A T-shaped wall junction segment.
+wall_Tsplit_sloped,dungeon,4,4,2.5,0.6,Wall Tsplit Sloped - A T-shaped wall junction with a sloping top.
+Wall_Window_Closed,prototype,4,4,0.5300007,0.75,Wall Window Closed - A wall segment with a closed window and a red curtain.
+wall_window_closed,dungeon,4,4,0.9999999,0.6,"Wall Window Closed Bars - A wall segment with a closed window, barred."
+wall_window_closed_scaffold,dungeon,4,4,0.9999999,0.6,Wall Window Open Closed with scaffold - A wall segment with an open window and a yellow curtain.
+Wall_Window_Open,prototype,4,4,0.5300007,0.75,Wall Window Open - A wall segment with an open window and a yellow curtain.
+wall_window_open,dungeon,4,4,0.9999999,0.6,Wall Window Open - A wall segment with an open window and a yellow curtain.
+wall_window_open_scaffold,dungeon,4,4,0.9999999,0.6,Wall Window Open with scaffold - A wall segment with an open window and a yellow curtain.
+waterlily_A,medieval,0.1451445,0.01714864,0.1446272,6,Waterlily A - A single green waterlily pad.
+waterlily_B,medieval,0.2114527,0.01714865,0.2106952,6,Waterlily B - Two overlapping green waterlily pads.
+waterplant_A,medieval,0.1982712,0.1323118,0.2156927,6,Waterplant A - A green aquatic plant with broad leaves.
+waterplant_B,medieval,0.1579539,0.2542295,0.1030674,6,Waterplant B - A taller green aquatic plant with a flower bud.
+waterplant_C,medieval,0.1982712,0.2471554,0.2156927,6,Waterplant C - A blooming version of Waterplant B with an open pink flower.
+watertower,city,0.4988862,0.670001,0.4988862,4,Watertower - A simple gray watertower with a rounded top.
+weaponrack,medieval,0.2000019,0.24,0.1300003,6,Weaponrack - A wooden weapon rack holding various weapons.
+wheelbarrow,medieval,0.238,0.1884152,0.5056797,6,Wheelbarrow - A wooden wheelbarrow with a metal wheel.

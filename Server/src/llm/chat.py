@@ -1,6 +1,8 @@
 import os
 import yaml
+import json
 import openai
+import random
 
 from langsmith import traceable
 from langchain_openai import ChatOpenAI
@@ -64,6 +66,7 @@ class Chat:
 
         self.history.add(usr_msg, response)
 
+        print(response)
         return response
 
     def _chat(self, llm, usr_msg, more_context, ignore_history, ignore_context):
@@ -96,8 +99,9 @@ class Chat:
 
     def set_context(self, query, sampling_size=3):
         docs = self.get_docs(query, sampling_size)
-        print("DOCS:")
-        print(docs)
+        random.shuffle(docs)
+        # print("DOCS:")
+        # print(docs)
         self.context_docs = docs
         
     def clear_history(self):
@@ -137,11 +141,17 @@ class Chat:
 
         return chain
 
+def parse_content(doc_content):
+    json_doc = json.loads(doc_content)
+    res = f"Name: {json_doc['name']}\n"
+    res += f"Description: {json_doc['description']}\n"
+    res += f"Dimensions: X: {json_doc['dimensions']['x']}, Y: {json_doc['dimensions']['y']}, Z: {json_doc['dimensions']['z']}\n\n"
+    return res
 
 def prep_docs_for_query(docs):
     cleaned_docs = []
     for doc in docs:
-        content = doc.page_content
+        content = parse_content(doc.page_content)
         cleaned_docs.append(f"\n{content}\n")
 
     return "\n".join(cleaned_docs)
