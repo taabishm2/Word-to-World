@@ -4,14 +4,20 @@ using System.IO;
 
 public class BundleBuilder
 {
-    [MenuItem("W2W/Build Asset Bundles")]
-    static void BuildAllAssetBundles()
+    [MenuItem("Tools/Build Manual AssetBundle")]
+    static void Build()
     {
-        string assetBundleDirectory = "Assets/BuiltAssetBundles";
-        if (!Directory.Exists(Application.streamingAssetsPath))
-            Directory.CreateDirectory(assetBundleDirectory);
+        string assetBundleDirectory = "Assets/Build AssetBundles";
+        if (!System.IO.Directory.Exists(assetBundleDirectory))
+        {
+            System.IO.Directory.CreateDirectory(assetBundleDirectory);
+        }
 
-        BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.None, EditorUserBuildSettings.activeBuildTarget);
+        BuildPipeline.BuildAssetBundles(assetBundleDirectory, 
+            BuildAssetBundleOptions.None, 
+            EditorUserBuildSettings.activeBuildTarget);
     }
 
 }
+
+
