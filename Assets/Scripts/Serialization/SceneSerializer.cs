@@ -23,6 +23,8 @@ public class SerializedAsset
     }
 }
     private const string jsonFilePath = "Assets/SerializedAssets.json";
+
+    public GameObject parentObject;
   public static class JsonHelper
 {
     public static T[] FromJson<T>(string json)
@@ -44,7 +46,7 @@ public class SerializedAsset
         public T[] Items;
     }
 }
-    public static IEnumerator<object> onButtonClick(){
+    public void onButtonClick(){
         Debug.Log("Save button clicked.");
         List<SerializedAsset> serializedAssets = new List<SerializedAsset>();
         GameObject[] objects = GameObject.FindObjectsOfType<GameObject>();
@@ -54,23 +56,30 @@ public class SerializedAsset
             SerializedAsset asset = new SerializedAsset(obj.name, obj.transform.position, obj.transform.localScale, obj.transform.rotation);
             serializedAssets.Add(asset);
         }
-        string json = JsonHelper.ToJson(serializedAssets.ToArray());
-        string url = "http://127.0.0.1:5555/process_data";
-        UnityWebRequest request = UnityWebRequest.PostWwwForm(url, json);
-        request.SetRequestHeader("Content-Type", "application/json");
-         // Prepare buffer for response.
-        request.downloadHandler = new DownloadHandlerBuffer();
-        yield return request.SendWebRequest();
 
-        // Check for errors
-        if (request.result != UnityWebRequest.Result.Success)
-        {
-            Debug.LogError(request.error);
-        }
-        else
-        {
-            Debug.Log("Response: " + request.downloadHandler.text);
-        }
+         foreach (Transform child in parentObject.transform)
+            {
+                Debug.Log("Child found: " + child.gameObject.name + " " + child.position); // Logs the name of each child
+            }
+        
+        string json = JsonHelper.ToJson(serializedAssets.ToArray());
+        Debug.Log($"assets serialized {json}");
+        // string url = "http://127.0.0.1:5555/process_data";
+        // UnityWebRequest request = UnityWebRequest.PostWwwForm(url, json);
+        // request.SetRequestHeader("Content-Type", "application/json");
+        //  // Prepare buffer for response.
+        // request.downloadHandler = new DownloadHandlerBuffer();
+        // yield return request.SendWebRequest();
+
+        // // Check for errors
+        // if (request.result != UnityWebRequest.Result.Success)
+        // {
+        //     Debug.LogError(request.error);
+        // }
+        // else
+        // {
+        //     Debug.Log("Response: " + request.downloadHandler.text);
+        // }
     }
 
 
