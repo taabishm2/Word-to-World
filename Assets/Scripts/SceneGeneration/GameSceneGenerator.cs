@@ -11,7 +11,6 @@ public class GameSceneGenerator : MonoBehaviour
     [SerializeField] private Button generateScene;
 
     [SerializeField] private TextMeshProUGUI errorText;
-    public string bundleURL = "http://127.0.0.1:8000/fbxassetbundle";
 
     public string generateSceneUrl = "http://127.0.0.1:5555/create-scene";
 

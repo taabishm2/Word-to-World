@@ -7,6 +7,8 @@ using UnityEngine.Networking;
 
 public class SceneBuilder : MonoBehaviour
 {
+    public string bundleURL;
+
     [Serializable]
     public class SceneGenerationRequest
     {
@@ -31,15 +33,15 @@ public class SceneBuilder : MonoBehaviour
         public AssetData[] assets;
     }
 
-    private GameObject parentObject; // Parent object for all spawned assets
+    public GameObject parentObject; // Assigned in the scene editor.
 
     void Start()
     {
         // Create or find the parent object
-        parentObject = new GameObject("AssetsParent");
-        // Set the custom transform for the parent object
-        parentObject.transform.position = Vector3.zero; // Set the desired position
-        parentObject.transform.rotation = Quaternion.identity; // Set the desired rotation
+        // parentObject = new GameObject("AssetsParent");
+        // // Set the custom transform for the parent object
+        // parentObject.transform.position = Vector3.zero; // Set the desired position
+        // parentObject.transform.rotation = Quaternion.identity; // Set the desired rotation
 
     }
 
@@ -115,7 +117,7 @@ public class SceneBuilder : MonoBehaviour
 
             //TODO: Parallelize this if possible
             // TODO: Parameterize the URL
-            yield return StartCoroutine(LoadAssetCoroutine("http://127.0.0.1:8000/fbxassetbundle", asset.name, callback, onError));
+            yield return StartCoroutine(LoadAssetCoroutine(bundleURL, asset.name, callback, onError));
         }
 
         onSuccess?.Invoke($"{assets.Length} assets successfully initialized.");
@@ -146,7 +148,7 @@ public class SceneBuilder : MonoBehaviour
 
                 if (uwr.result != UnityWebRequest.Result.Success)
                 {
-                    Debug.LogError($"Failed to download asset bundle: {uwr.error}");
+                    Debug.LogError($"Failed to download asset bundle: {uwr.error} {bundleURL}");
                     onError?.Invoke(uwr.error);
                 }
                 else
