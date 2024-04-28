@@ -11,16 +11,15 @@ public class GameSceneGenerator : MonoBehaviour
     [SerializeField] private Button generateScene;
 
     [SerializeField] private TextMeshProUGUI errorText;
-    public string bundleURL = "http://localhost:8000/shapes";
-    string assetName = "sphere";
+    public string bundleURL = "http://127.0.0.1:8000/fbxassetbundle";
 
-    public string generateSceneUrl = "http://localhost:8000/create_scene";
+    public string generateSceneUrl = "http://127.0.0.1:5555/create-scene";
 
     public Transform userOrigin;
 
     public SceneBuilder sceneBuilder;
 
-    public string InitialPrompt = "create a scene with red sphere and a cylinder, next to each other";
+    public string InitialPrompt = "a few houses and trees with a sunny day in a countryside";
 
     /* Functionalities */
     // 1. Generate scene based on user input.
@@ -29,38 +28,45 @@ public class GameSceneGenerator : MonoBehaviour
 
     void Start()
     {
-        generateScene.onClick.AddListener(GenerateScene);
+        // generateScene.onClick.AddListener(GenerateScene);
 
+        // sceneBuilder.SomeMethod();
         UserInput(InitialPrompt);
         // StartCoroutine(sceneBuilder.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
     }
 
-    private void GenerateScene() {
-        errorText.text = "Fetching assets...";
-        StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
-    }
+    // private void GenerateScene() {
+    //     errorText.text = "Fetching assets...";
+    //     StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
+    // }
 
     private void OnAssetLoaded(GameObject loadedGameObject)
 
     {
         GameObject instance = Instantiate(loadedGameObject);
-        Debug.Log($"Successfully instantiated from the asset bundle.");
+        // Debug.Log($"Successfully instantiated from the asset bundle.");
         instance.transform.position = new Vector3(0,0,0); // Change to your desired location
         instance.transform.eulerAngles = new Vector3(0,0,0); // Change to your desired location
     }
 
     public void UserInput(string prompt) {
         // Get Assets catalog for user provided prompt.
-        StartCoroutine(sceneBuilder.GetAssetCatalog(generateSceneUrl, prompt, userOrigin, OnSuccess, OnError));
+        // Debug.Log("User input: " + prompt);
+        // Debug.Log("Scene Builder: " + sceneBuilder);
+        // Debug.Log("Generate Scene URL: " + generateSceneUrl);
+        // Debug.Log("User Origin: " + userOrigin);
+        
+        
+        StartCoroutine(sceneBuilder.GetAssetCatalog(generateSceneUrl, prompt, OnSuccess, OnError));
     }
 
     private void OnSuccess(string response) {
-        errorText.text += response;
+        // Debug.Log("Success: " + response);
     }
 
     private void OnError(string error)
     {
-        Debug.LogError(error);
-        errorText.text = "this is the error " + error;
+        Debug.LogError("ERROR IS: " + error);
+        // errorText.text = "this is the error " + error;
     }
 }
