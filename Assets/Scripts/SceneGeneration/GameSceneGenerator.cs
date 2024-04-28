@@ -30,7 +30,7 @@ public class GameSceneGenerator : MonoBehaviour
         // generateScene.onClick.AddListener(GenerateScene);
 
         // sceneBuilder.SomeMethod();
-        UserInput(InitialPrompt);
+        // UserInput(InitialPrompt);
         // StartCoroutine(sceneBuilder.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
     }
 

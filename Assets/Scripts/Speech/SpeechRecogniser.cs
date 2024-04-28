@@ -71,7 +71,7 @@ public class SpeechRecogniser : MonoBehaviour
 
             // Send recongised text to server.
             gameSceneGenerator.UserInput(response);
-            StartCoroutine(HelperRoutines.SendLLMTextRequest(response, apikey, OnAgentResponseReceived, OnError));
+            // StartCoroutine(HelperRoutines.SendLLMTextRequest(response, apikey, OnAgentResponseReceived, OnError));
         }, error => {
             voiceText.color = Color.red;
             voiceText.text = error;

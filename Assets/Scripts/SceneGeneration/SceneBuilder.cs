@@ -199,7 +199,7 @@ public class SceneBuilder : MonoBehaviour
             }
         }
         
-        Debug.Log("Pstition:" + position + ", Rotation:" + rotation + ", Scale:" + scale);
+        Debug.Log("Postition:" + position + ", Rotation:" + rotation + ", Scale:" + scale);
         instance.transform.position = position; // Change to your desired location
         instance.transform.eulerAngles = rotation; // Change to your desired location
         instance.transform.localScale = scale; // Change to your desired scale
