@@ -1,8 +1,26 @@
-using System.Collections;
+
 using UnityEngine;
+using System.IO;
+using System.Collections.Generic;
+
 
 public class SceneSerializer : MonoBehaviour {
+[System.Serializable]
+public class SerializedAsset
+{
+    public string assetName;
+    public Vector3 position;
+    public Vector3 scale;
+    public Quaternion rotation;
 
+    public SerializedAsset(string name, Vector3 pos, Vector3 scale, Quaternion rot)
+    {
+        assetName = name;
+        position = pos;
+        this.scale = scale;
+        rotation = rot;
+    }
+}
     // TODO
 
     /**
@@ -35,6 +53,44 @@ public class SceneSerializer : MonoBehaviour {
     Also, if a function in the Editor scripts has "[MenuItem("Test123/Generate my scene")]" in the beginning, Unity editor
     will have this function in the menu bar
     **/
+
+    private const string jsonFilePath = "Assets/SerializedAssets.json";
+  public static class JsonHelper
+{
+    public static T[] FromJson<T>(string json)
+    {
+        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+        return wrapper.Items;
+    }
+
+    public static string ToJson<T>(T[] array)
+    {
+        Wrapper<T> wrapper = new Wrapper<T>();
+        wrapper.Items = array;
+        return JsonUtility.ToJson(wrapper);
+    }
+
+    [System.Serializable]
+    private class Wrapper<T>
+    {
+        public T[] Items;
+    }
+}
+    public static void onButtonClick(){
+        Debug.Log("Save button clicked.");
+        List<SerializedAsset> serializedAssets = new List<SerializedAsset>();
+        GameObject[] objects = GameObject.FindObjectsOfType<GameObject>();
+        
+        foreach (GameObject obj in objects)
+        {
+            SerializedAsset asset = new SerializedAsset(obj.name, obj.transform.position, obj.transform.localScale, obj.transform.rotation);
+            serializedAssets.Add(asset);
+        }
+        string json = JsonHelper.ToJson(serializedAssets.ToArray());
+        Debug.Log(json);
+        File.WriteAllText(jsonFilePath, json);
+        Debug.Log("Scene serialized to JSON.");
+    }
 
 
 
