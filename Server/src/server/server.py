@@ -8,6 +8,7 @@ from flask import Flask, jsonify, request
 from langsmith.wrappers import wrap_openai
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import OpenAIEmbeddings
+import pandas as pd
 
 from src.llm.chat import Chat, get_prompt, gpt_3_5_turbo, gpt_4
 from src.llm.rag import create_asset_db
@@ -101,6 +102,48 @@ def generate_initial_scene():
     
     return jsonify(response), 200
 
+@app.route('/process_data', methods=['POST'])
+def process_data():
+    # Get the serialized JSON data from the request
+    data = request.get_json()
+
+    # Process the data
+    processed_data = {
+        'message': 'Data received and processed successfully',
+    }
+
+    # Save the processed data to a JSON file
+    with open('processed_data.json', 'w') as outfile:
+        json.dump(data, outfile)
+
+    # Return a response
+    return jsonify(processed_data), 200
+
+
+
+asset_metadata = pd.read_csv('asset/asset_metadata.csv')
+
+@app.route('/serve_save', methods=['GET'])
+def serve_save_api():
+
+    # Load assets.json file
+    with open('processed_data.json', 'r') as f:
+       processed_data = json.load(f)
+    
+
+    # Prepare response data
+    response_data = {}
+
+    for entry in processed_data:
+        asset_name = entry['name']
+        bundle_url = asset_metadata[asset_metadata['FBX Name'] == asset_name]['Source'].values[0]
+        response_data[asset_name] = {'bundle_url': bundle_url, 'processed_data': entry}
+        
+
+    return jsonify(response_data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5555", debug=True)
