@@ -121,26 +121,16 @@ def process_data():
 
 
 
-asset_metadata = pd.read_csv('asset/asset_metadata.csv')
-
 @app.route('/serve_save', methods=['GET'])
 def serve_save_api():
 
+    asset_metadata = pd.read_csv('asset/asset_metadata.csv')        
     # Load assets.json file
     with open('processed_data.json', 'r') as f:
        processed_data = json.load(f)
-    
-
-    # Prepare response data
-    response_data = {}
-
-    for entry in processed_data:
-        asset_name = entry['name']
-        bundle_url = asset_metadata[asset_metadata['FBX Name'] == asset_name]['Source'].values[0]
-        response_data[asset_name] = {'bundle_url': bundle_url, 'processed_data': entry}
         
 
-    return jsonify(response_data)
+    return jsonify(processed_data)
 
 if __name__ == '__main__':
     app.run(debug=True)

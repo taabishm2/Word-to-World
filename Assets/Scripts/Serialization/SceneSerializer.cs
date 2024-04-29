@@ -49,37 +49,35 @@ public class SerializedAsset
     public void onButtonClick(){
         Debug.Log("Save button clicked.");
         List<SerializedAsset> serializedAssets = new List<SerializedAsset>();
-        GameObject[] objects = GameObject.FindObjectsOfType<GameObject>();
-        // need to save objects in the parent folder
-        foreach (GameObject obj in objects)
-        {
-            SerializedAsset asset = new SerializedAsset(obj.name, obj.transform.position, obj.transform.localScale, obj.transform.rotation);
-            serializedAssets.Add(asset);
-        }
 
          foreach (Transform child in parentObject.transform)
             {
-                Debug.Log("Child found: " + child.gameObject.name + " " + child.position); // Logs the name of each child
+                SerializedAsset asset = new SerializedAsset(child.gameObject.name, child.position, child.localScale, child.rotation);
+                serializedAssets.Add(asset); 
             }
         
         string json = JsonHelper.ToJson(serializedAssets.ToArray());
         Debug.Log($"assets serialized {json}");
-        // string url = "http://127.0.0.1:5555/process_data";
-        // UnityWebRequest request = UnityWebRequest.PostWwwForm(url, json);
-        // request.SetRequestHeader("Content-Type", "application/json");
-        //  // Prepare buffer for response.
-        // request.downloadHandler = new DownloadHandlerBuffer();
-        // yield return request.SendWebRequest();
+        StartCoroutine(SaveCoroutine(json));
+    }
 
-        // // Check for errors
-        // if (request.result != UnityWebRequest.Result.Success)
-        // {
-        //     Debug.LogError(request.error);
-        // }
-        // else
-        // {
-        //     Debug.Log("Response: " + request.downloadHandler.text);
-        // }
+    private IEnumerator<object> SaveCoroutine(string json){
+        string url = "http://127.0.0.1:5555/get_prompt";
+        UnityWebRequest request = UnityWebRequest.PostWwwForm(url, json);
+        request.SetRequestHeader("Content-Type", "application/json");
+         // Prepare buffer for response.
+        request.downloadHandler = new DownloadHandlerBuffer();
+        yield return request.SendWebRequest();
+
+        // Check for errors
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError(request.error);
+        }
+        else
+        {
+            Debug.Log("Response: " + request.downloadHandler.text);
+        }
     }
 
 
