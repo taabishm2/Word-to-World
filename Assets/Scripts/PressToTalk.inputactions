@@ -1,0 +1,34 @@
+{
+    "name": "PressToTalk",
+    "maps": [
+        {
+            "name": "VR Hands",
+            "id": "f019ea67-26ac-4e4a-878e-3bf884cbe859",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "4d9e3f77-5f5d-4af2-87c5-3a96f268e22c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7c318e69-341a-42bc-9630-936eff1fb24f",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
