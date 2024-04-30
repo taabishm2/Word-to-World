@@ -12,6 +12,7 @@ using UnityEngine.InputSystem;
 
 public class GripToSpeak : MonoBehaviour
 {
+    public GameSceneGenerator gameSceneGenerator;
     public InputActionReference gripActionReference; // Assign in the inspector
 
     public TextMeshPro voiceText;
@@ -94,6 +95,7 @@ public class GripToSpeak : MonoBehaviour
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             voiceText.color = Color.white;
             voiceText.text = response;
+            gameSceneGenerator.GenerateScene(response);
         }, error => {
             voiceText.color = Color.red;
             voiceText.text = error;

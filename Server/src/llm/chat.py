@@ -66,7 +66,7 @@ class Chat:
 
         self.history.add(usr_msg, response)
 
-        print(response)
+        print("LLM RESPONSE:\n", response)
         return response
 
     def _chat(self, llm, usr_msg, more_context, ignore_history, ignore_context):

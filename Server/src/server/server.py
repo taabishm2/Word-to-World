@@ -76,7 +76,7 @@ def generate_initial_scene():
     # 3. Generate the scene
     response = json.loads(
         chat_obj.chat(
-            gpt_4,
+            gpt_3_5_turbo,
             get_prompt("design", "usr_msg", vals),
         )
     )

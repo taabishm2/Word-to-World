@@ -73,3 +73,5 @@ crashlytics-build.properties
 
 # Server uploads.
 Server/uploads/
+
+*__pycache__*
