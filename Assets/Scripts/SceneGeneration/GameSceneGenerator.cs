@@ -15,34 +15,10 @@ public class GameSceneGenerator : MonoBehaviour
 
     private Transform userOrigin;
 
-    // void Start()
-    // {
-    //     UserInput(initialPrompt);
-    // }
-
-    // private void GenerateScene() {
-    //     errorText.text = "Fetching assets...";
-    //     StartCoroutine(AssetLoader.LoadAssetCoroutine(bundleURL, assetName, OnAssetLoaded, OnError));
-    // }
-
-    private void OnAssetLoaded(GameObject loadedGameObject)
-
+    public void GenerateScene(string prompt, Vector3 hitPoint)
     {
-        GameObject instance = Instantiate(loadedGameObject);
-        // Debug.Log($"Successfully instantiated from the asset bundle.");
-        instance.transform.position = new Vector3(0, 0, 0); // Change to your desired location
-        instance.transform.eulerAngles = new Vector3(0, 0, 0); // Change to your desired location
-    }
 
-    public void GenerateScene(string prompt)
-    {
-        // Get Assets catalog for user provided prompt.
-        Debug.Log("User input: " + prompt);
-        Debug.Log("Scene Builder: " + sceneBuilder);
-        Debug.Log("Generate Scene URL: " + generateSceneUrl);
-        Debug.Log("User Origin: " + userOrigin);
-
-        StartCoroutine(sceneBuilder.GetAssetCatalog(generateSceneUrl, prompt, OnSuccess, OnError));
+        StartCoroutine(sceneBuilder.GetAssetCatalog(generateSceneUrl, prompt, hitPoint, OnSuccess, OnError));
     }
 
     private void OnSuccess(string response)
@@ -53,6 +29,5 @@ public class GameSceneGenerator : MonoBehaviour
     private void OnError(string error)
     {
         Debug.LogError("ERROR IS: " + error);
-        // errorText.text = "this is the error " + error;
     }
 }

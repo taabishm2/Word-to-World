@@ -7,12 +7,14 @@ using UnityEngine.Networking;
 
 public class SceneBuilder : MonoBehaviour
 {
+    public GameObject parentObject; // Assigned in the scene editor.
     public string bundleURL = "http://127.0.0.1:8000/fbxassetbundle";
 
     [Serializable]
     public class SceneGenerationRequest
     {
         public string prompt;
+        public Vector3 hit_point;
         public Vector3 user_location;
         public Vector3 user_rotation;
     }
@@ -33,68 +35,43 @@ public class SceneBuilder : MonoBehaviour
         public AssetData[] assets;
     }
 
-    public GameObject parentObject; // Assigned in the scene editor.
-
     void Start()
     {
-        // Create or find the parent object
         parentObject = new GameObject("AssetsParent");
-        // Set the custom transform for the parent object
-        parentObject.transform.position = Vector3.zero; // Set the desired position
-        parentObject.transform.rotation = Quaternion.identity; // Set the desired rotation
-
+        parentObject.transform.position = Vector3.zero;
+        parentObject.transform.rotation = Quaternion.identity;
     }
 
-    private static string preparePayload(string prompt)
+    private static string preparePayload(string prompt, Vector3 hitPoint)
     {
-        // Create a SceneGenerationRequest object
         SceneGenerationRequest request = new SceneGenerationRequest();
-
         request.prompt = prompt;
-        // request.user_location = 0;
-        // request.user_rotation = 0;
+        request.hit_point = hitPoint;
 
         // Serialize the object to JSON
-        string json = JsonUtility.ToJson(request);
-
-        // Now you can send 'json' as part of your request payload
-        // Debug.Log(json);
-
-
-        return json;
+        return JsonUtility.ToJson(request);
     }
 
-    public IEnumerator GetAssetCatalog(string generateSceneUrl, string prompt, System.Action<string> onSuccess, System.Action<string> onError)
+    public IEnumerator GetAssetCatalog(string generateSceneUrl, string prompt, Vector3 hitPoint,
+        System.Action<string> onSuccess, System.Action<string> onError)
     {
-        string jsonPayload = preparePayload(prompt);
+        string jsonPayload = preparePayload(prompt, hitPoint);
 
-        // Debug.Log("Sending request to: " + generateSceneUrl);
         using (UnityWebRequest uwr = UnityWebRequest.Put(generateSceneUrl, jsonPayload))
         {
-            // Set the content type
             uwr.SetRequestHeader("Content-Type", "application/json");
-
             yield return uwr.SendWebRequest();
 
-            // Check for errors
             if (uwr.result == UnityWebRequest.Result.ConnectionError || uwr.result == UnityWebRequest.Result.ProtocolError)
             {
                 onError?.Invoke(uwr.error);
-
                 Debug.LogError("PUT request error: " + uwr.error);
             }
             else
             {
                 string jsonResponse = uwr.downloadHandler.text;
-
-                // Log the response
-                // Debug.Log("PUT request successful: " + jsonResponse);
-
-
-                // Deserialize the JSON response
                 APIResponse response = JsonUtility.FromJson<APIResponse>(jsonResponse);
 
-                // Spawn assets.
                 yield return StartCoroutine(SpawnAssets(response.assets, onSuccess, onError));
             }
         }
@@ -102,7 +79,6 @@ public class SceneBuilder : MonoBehaviour
 
     private IEnumerator SpawnAssets(AssetData[] assets, System.Action<string> onSuccess, System.Action<string> onError)
     {
-        // Debug.Log("Spawning number of objects: " + assets.Length);
 
         foreach (AssetData asset in assets)
         {
@@ -112,10 +88,6 @@ public class SceneBuilder : MonoBehaviour
                 OnAssetLoaded(loadedGameObject, asset.position, asset.rotation, asset.scale);
             };
 
-            // Debug.Log("Spawning object from " + asset.bundle_url + " name " + asset.name);
-
-            //TODO: Parallelize this if possible
-            // TODO: Parameterize the URL
             yield return StartCoroutine(LoadAssetCoroutine(bundleURL, asset.name, callback, onError));
         }
 
@@ -127,8 +99,6 @@ public class SceneBuilder : MonoBehaviour
         AssetBundle asset_bundle = null;
 
         // Check if AssetBundle is already loaded.
-
-        // Get all loaded AssetBundles
         AssetBundle[] loadedAssetBundles = AssetBundle.GetAllLoadedAssetBundles().ToArray();
 
         // Iterate through the loaded AssetBundles and check if the URL matches
@@ -176,7 +146,6 @@ public class SceneBuilder : MonoBehaviour
         else
         {
             onSuccess?.Invoke(request.asset as GameObject);
-            // Debug.Log($"Successfully instantiated '{assetName}' from the asset bundle.");
         }
 
         asset_bundle.Unload(false);
@@ -199,11 +168,8 @@ public class SceneBuilder : MonoBehaviour
             }
         }
 
-        Debug.Log("Pstition:" + position + ", Rotation:" + rotation + ", Scale:" + scale);
         instance.transform.position = position; // Change to your desired location
         instance.transform.eulerAngles = rotation; // Change to your desired location
         instance.transform.localScale = scale; // Change to your desired scale
-
-        // Debug.Log("Successfully instantiated from the asset bundle.");
     }
 }
