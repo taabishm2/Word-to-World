@@ -14,11 +14,23 @@ public class GripToSpeak : MonoBehaviour
 {
     public InputActionReference gripActionReference; // Assign in the inspector
 
-    public string apikey;
     public TextMeshPro voiceText;
+    public AudioClip startRecordingClip; // AudioClip for start recording
+    public AudioClip stopRecordingClip; // AudioClip for stop recording
+    
+    private AudioSource audioSource; // AudioSource component
+
     private byte[] bytes;
     private AudioClip clip;
     private bool isRecording = false;
+
+    private void Awake() {
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+        if (audioSource == null) {
+            Debug.LogWarning("AudioSource component missing, adding one.");
+            audioSource = gameObject.AddComponent<AudioSource>(); // Add AudioSource if not already added
+        }
+    }
 
     private void OnEnable()
     {
@@ -55,6 +67,7 @@ public class GripToSpeak : MonoBehaviour
         Debug.Log("Recording started");
         voiceText.color = Color.white;
         voiceText.text = "Recording...";
+        audioSource.PlayOneShot(startRecordingClip); // Play start sound
         clip = Microphone.Start(null, false, 10, 44100);
         isRecording = true;
     }
@@ -64,6 +77,7 @@ public class GripToSpeak : MonoBehaviour
         Debug.Log("Recording stopped");
         var position = Microphone.GetPosition(null);
         Microphone.End(null);
+        audioSource.PlayOneShot(stopRecordingClip); // Play stop sound
 
         var samples = new float[position * clip.channels];
         clip.GetData(samples, 0);
