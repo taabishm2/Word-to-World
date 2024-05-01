@@ -8,7 +8,6 @@ using UnityEngine.Networking;
 public class SceneBuilder : MonoBehaviour
 {
     public GameObject parentObject; // Assigned in the scene editor.
-    public string bundleURL = URLS.w2w_server_url + "/bundle";
 
     [Serializable]
     public class SceneGenerationRequest
@@ -87,7 +86,7 @@ public class SceneBuilder : MonoBehaviour
                 OnAssetLoaded(loadedGameObject, asset.position, asset.rotation, asset.scale);
             };
 
-            yield return StartCoroutine(LoadAssetCoroutine(bundleURL, asset.name, callback, onError));
+            yield return StartCoroutine(LoadAssetCoroutine(URLS.w2w_server_url + "/bundle", asset.name, callback, onError));
         }
 
         onSuccess?.Invoke($"{assets.Length} assets successfully initialized.");

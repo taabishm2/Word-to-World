@@ -10,14 +10,13 @@ public class GameSceneGenerator : MonoBehaviour
 {
 
     public SceneBuilder sceneBuilder;
-    public string generateSceneUrl = URLS.w2w_server_url + "/create-scene";
 
     private Transform userOrigin;
 
     public void GenerateScene(string prompt, Vector3 hitPoint)
     {
 
-        StartCoroutine(sceneBuilder.GetAssetCatalog(generateSceneUrl, prompt, hitPoint, OnSuccess, OnError));
+        StartCoroutine(sceneBuilder.GetAssetCatalog(URLS.w2w_server_url + "/create-scene", prompt, hitPoint, OnSuccess, OnError));
     }
 
     private void OnSuccess(string response)

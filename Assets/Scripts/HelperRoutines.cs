@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using System;
 
 public static class URLS {
-    public static string w2w_server_url = "http://127.0.0.1:5555";
+    public static string w2w_server_url = "http://192.168.1.248:5555";
 }
 
 // Define a class structure to represent the JSON response
