@@ -63,16 +63,16 @@ def generate_initial_scene():
     
     response = request.get_json()
     hitpoint = (response["hit_point"]["x"], response["hit_point"]["y"], response["hit_point"]["z"])
-    print("HITPOINT:", hitpoint)
     
     vals = {
         "scene": response["prompt"],
         "hitpoint_coord": hitpoint,
         }
     
-    print("CREATING SCENE:\n\n", vals["scene"])
-    
     asset_query = vals["scene"]
+    print("*"*50)
+    print(f"Generating scene '{vals['scene']}' at {vals['hitpoint_coord']}")
+    print("*"*50)
 
     # TODO: Set sampling size correctly
     # 2. Fetch the assets using the query
@@ -83,10 +83,6 @@ def generate_initial_scene():
         gpt_3_5_turbo,
         get_prompt("design", "usr_msg", vals),
     )
-    
-    print()
-    print(response)
-    print()
     
     # 3. Generate the scene
     json_list = []
@@ -119,6 +115,7 @@ def generate_initial_scene():
     # print(SCALES_CACHE)
     
     for entry in response["assets"]:
+        if entry["name"] not in SCALES_CACHE: continue
         scale = SCALES_CACHE[entry["name"]]
         entry["scale"] = {
             "x": scale,
@@ -128,9 +125,8 @@ def generate_initial_scene():
 
     response["chat_id"] = chat_id
     
-    # print("\n"*3)
-    # pprint(response)
-    # print()
+    print(f"Generated with {len(response['assets'])} assets")
+    print("*"*50)
     
     return jsonify(response), 200
 

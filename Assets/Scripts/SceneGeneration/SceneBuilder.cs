@@ -150,24 +150,43 @@ public class SceneBuilder : MonoBehaviour
     }
 
     private void OnAssetLoaded(GameObject loadedGameObject, Vector3 position, Vector3 rotation, Vector3 scale)
+{
+    StartCoroutine(SpawnAndScaleObject(loadedGameObject, position, rotation, scale));
+}
 
+IEnumerator SpawnAndScaleObject(GameObject loadedGameObject, Vector3 position, Vector3 rotation, Vector3 scale)
+{
+    GameObject instance = Instantiate(loadedGameObject, parentObject.transform);
+
+    // Apply the material to the instantiated object's renderer component
+    Renderer renderer = instance.GetComponent<Renderer>();
+    if (renderer != null)
     {
-        GameObject instance = Instantiate(loadedGameObject, parentObject.transform);
-
-        // Apply the material to the instantiated object's renderer component
-        Renderer renderer = instance.GetComponent<Renderer>();
-        if (renderer != null && renderer.material != null)
+        // Set the Universal Render Pipeline Lit shader
+        Shader urpLitShader = Shader.Find("Universal Render Pipeline/Lit");
+        if (urpLitShader != null)
         {
-            // Set the Universal Render Pipeline Lit shader
-            Shader urpLitShader = Shader.Find("Universal Render Pipeline/Lit");
-            if (urpLitShader != null)
-            {
-                renderer.material.shader = urpLitShader;
-            }
+            renderer.material.shader = urpLitShader;
         }
-
-        instance.transform.position = position; // Change to your desired location
-        instance.transform.eulerAngles = rotation; // Change to your desired location
-        instance.transform.localScale = scale; // Change to your desired scale
     }
+
+    instance.transform.position = position;
+    instance.transform.eulerAngles = rotation;
+    instance.transform.localScale = Vector3.zero; // Start at zero scale
+
+    float duration = 1.0f; // Duration of the scale effect in seconds
+    float elapsed = 0f;
+
+    while (elapsed < duration)
+    {
+        elapsed += Time.deltaTime;
+        float progress = elapsed / duration;
+        instance.transform.localScale = Vector3.Lerp(Vector3.zero, scale, progress);
+        yield return null;
+    }
+
+    instance.transform.localScale = scale; // Ensure it ends at the correct scale
+}
+
+    
 }
