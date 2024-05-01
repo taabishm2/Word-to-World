@@ -10,8 +10,7 @@ public class GameSceneGenerator : MonoBehaviour
 {
 
     public SceneBuilder sceneBuilder;
-    public string generateSceneUrl = "http://127.0.0.1:5555/create-scene";
-    public string initialPrompt = "a few houses and trees with a sunny day in a countryside";
+    public string generateSceneUrl = URLS.w2w_server_url + "/create-scene";
 
     private Transform userOrigin;
 

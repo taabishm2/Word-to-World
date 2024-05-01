@@ -1,0 +1,221 @@
+{
+    "name": "AssetsParent",
+    "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+    },
+    "rotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+    },
+    "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    },
+    "children": [
+        {
+            "name": "building_home_A_red(Clone)",
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "tree_single_A(Clone)",
+            "position": {
+                "x": -6.0,
+                "y": 0.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.3826834559440613,
+                "z": 0.0,
+                "w": 0.9238795042037964
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "tree_single_A(Clone)",
+            "position": {
+                "x": 6.0,
+                "y": 0.0,
+                "z": 4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": -0.3826834559440613,
+                "z": 0.0,
+                "w": 0.9238795042037964
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "rock_single_A(Clone)",
+            "position": {
+                "x": -4.0,
+                "y": 0.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "rock_single_A(Clone)",
+            "position": {
+                "x": 4.0,
+                "y": 0.0,
+                "z": -4.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "hill_single_A(Clone)",
+            "position": {
+                "x": -8.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "hill_single_A(Clone)",
+            "position": {
+                "x": 8.0,
+                "y": 0.0,
+                "z": -8.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "tree_single_B(Clone)",
+            "position": {
+                "x": -10.0,
+                "y": 0.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.2588190734386444,
+                "z": 0.0,
+                "w": 0.9659258723258972
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "tree_single_B(Clone)",
+            "position": {
+                "x": 10.0,
+                "y": 0.0,
+                "z": 6.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": -0.2588190734386444,
+                "z": 0.0,
+                "w": 0.9659258723258972
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        },
+        {
+            "name": "rock_single_E(Clone)",
+            "position": {
+                "x": -12.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 6.0,
+                "y": 6.0,
+                "z": 6.0
+            },
+            "children": []
+        }
+    ]
+}

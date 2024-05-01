@@ -1,3 +1,4 @@
+import os
 import uuid
 import json
 import openai
@@ -12,6 +13,7 @@ from langchain_openai import OpenAIEmbeddings
 from src.llm.chat import Chat, get_prompt, gpt_3_5_turbo, gpt_4
 from src.llm.rag import create_asset_db
 from src.server.assets import get_scales
+from flask import send_file
 
 # Used to save chats for continued conversations
 # ID of the chat is returned in response
@@ -21,6 +23,7 @@ EMBEDDING_MODEL = OpenAIEmbeddings()
 VECTOR_DB_PATH = "./db"
 
 SCALES_CACHE = dict()
+SCENE_JSON_PATH = "src/assets/GameObject.json"
 
 app = Flask(__name__)
 client = wrap_openai(openai.Client())
@@ -73,7 +76,7 @@ def generate_initial_scene():
 
     # TODO: Set sampling size correctly
     # 2. Fetch the assets using the query
-    chat_obj.set_context(asset_query, 15)
+    chat_obj.set_context(asset_query, 25)
     chat_obj.clear_history()
     
     response = chat_obj.chat(
@@ -94,14 +97,14 @@ def generate_initial_scene():
             {
                 "name": e[0].strip(),
                 "position": {
-                    "x": int(pos[0].strip()),
-                    "y": int(pos[1].strip()),
-                    "z": int(pos[2].strip())
+                    "x": float(pos[0].strip()),
+                    "y": float(pos[1].strip()),
+                    "z": float(pos[2].strip())
                 },
                 "rotation": {
-                    "x": int(rot[0].strip()),
-                    "y": int(rot[1].strip()),
-                    "z": int(rot[2].strip())
+                    "x": float(rot[0].strip()),
+                    "y": float(rot[1].strip()),
+                    "z": float(rot[2].strip())
                 }
             }
         )
@@ -131,6 +134,38 @@ def generate_initial_scene():
     
     return jsonify(response), 200
 
+
+@app.route('/save', methods=['POST'])
+def save_game_object():
+    if request.is_json:
+        data = request.get_json()
+        os.makedirs(os.path.dirname(SCENE_JSON_PATH), exist_ok=True)
+
+        print(data)
+        with open(SCENE_JSON_PATH, 'w') as file:
+            json.dump(data, file, indent=4)
+
+        return jsonify({"message": "Data saved successfully"}), 200
+    else:
+        return jsonify({"error": "Request must be JSON"}), 400
+
+@app.route('/fetch')
+def fetch_data():
+    with open(SCENE_JSON_PATH, 'r') as file:
+        data = json.load(file)["children"]
+    
+    for child in data:
+        child["name"] = child["name"].replace("(Clone)", "")
+        
+    return jsonify({"assets": data}), 200
+
+@app.route('/bundle')
+def get_file():
+    # Specify the path to your file
+    file_path = '../assets/fbxassetbundle'
+    
+    # Option 1: Send the file directly
+    return send_file(file_path)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5555", debug=True)

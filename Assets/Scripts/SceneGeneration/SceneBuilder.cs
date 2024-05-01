@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public class SceneBuilder : MonoBehaviour
 {
     public GameObject parentObject; // Assigned in the scene editor.
-    public string bundleURL = "http://127.0.0.1:8000/fbxassetbundle";
+    public string bundleURL = URLS.w2w_server_url + "/bundle";
 
     [Serializable]
     public class SceneGenerationRequest
@@ -37,7 +37,6 @@ public class SceneBuilder : MonoBehaviour
 
     void Start()
     {
-        parentObject = new GameObject("AssetsParent");
         parentObject.transform.position = Vector3.zero;
         parentObject.transform.rotation = Quaternion.identity;
     }

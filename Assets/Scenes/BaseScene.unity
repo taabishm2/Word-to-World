@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46953866, g: 0.4917812, b: 0.3946154, a: 1}
+  m_IndirectSpecularColor: {r: 0.22316541, g: 0.2477004, b: 0.2695346, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneGenerator: {fileID: 1087568546}
-  gripActionReference: {fileID: 5667446173830999989, guid: 0be0028c24f2a4c14a96b6aa39055933,
+  gripActionReference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   rayInteractor: {fileID: 1418367433}
   voiceText: {fileID: 1497425793}
