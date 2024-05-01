@@ -10,8 +10,6 @@ public class GameSceneGenerator : MonoBehaviour
 {
 
     public SceneBuilder sceneBuilder;
-    public string generateSceneUrl = "http://127.0.0.1:5555/create-scene";
-    public string initialPrompt = "a few houses and trees with a sunny day in a countryside";
 
     private Transform userOrigin;
 
@@ -23,7 +21,7 @@ public class GameSceneGenerator : MonoBehaviour
     {
         
 
-        StartCoroutine(sceneBuilder.GetAssetCatalog(generateSceneUrl, prompt, hitPoint, OnSuccess, OnError));
+        StartCoroutine(sceneBuilder.GetAssetCatalog(URLS.w2w_server_url + "/create-scene", prompt, hitPoint, OnSuccess, OnError));
     }
 
     private void OnSuccess(string response)
