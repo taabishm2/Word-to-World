@@ -129,6 +129,56 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 453501326}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &16318834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4933401034036173005, guid: 6c0300368639f4d279ae912b5a59cd65,
+    type: 3}
+  m_PrefabInstance: {fileID: 453501326}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16318830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &179089468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 518001690445147453, guid: 6c0300368639f4d279ae912b5a59cd65,
+    type: 3}
+  m_PrefabInstance: {fileID: 453501326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &179089473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179089468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6fe090007b4e4129bcf5389f80d739f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSceneGenerator: {fileID: 1087568546}
+  gripActionReference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  rayInteractor: {fileID: 16318834}
+  voiceText: {fileID: 1497425793}
+  startRecordingClip: {fileID: 8300000, guid: 4d5ae8522446941449901e2d40f2b6ef, type: 3}
+  stopRecordingClip: {fileID: 8300000, guid: 5c2788016876745c9bbf5bbb42c497a8, type: 3}
+  gripAnimationAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grip Animation
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 943444b6-3cd2-43e8-920f-f86f34abb842
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +459,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1218337225}
+    - targetCorrespondingSourceObject: {fileID: 3435607264703361402, guid: 6c0300368639f4d279ae912b5a59cd65,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1218337238}
+    - targetCorrespondingSourceObject: {fileID: 518001690445147453, guid: 6c0300368639f4d279ae912b5a59cd65,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 179089473}
     - targetCorrespondingSourceObject: {fileID: 7576481535285980487, guid: 6c0300368639f4d279ae912b5a59cd65,
         type: 3}
       insertIndex: -1
@@ -599,6 +657,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1218337238
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218337215}
+  serializedVersion: 4
+  m_Mass: 3
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1418367428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8737645899452206995, guid: 6c0300368639f4d279ae912b5a59cd65,
@@ -660,7 +745,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 842e7c526aef04cea96056d1f2f19b47,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 842e7c526aef04cea96056d1f2f19b47,
         type: 3}
@@ -716,6 +801,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SnowyMountainMesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 842e7c526aef04cea96056d1f2f19b47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1146115821930480418, guid: 842e7c526aef04cea96056d1f2f19b47,
         type: 3}
@@ -950,7 +1040,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -974,7 +1064,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1564773258
@@ -997,7 +1087,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 801a61ced86ba412ebbbb09df9dbf0bd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1035,13 +1125,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564773255}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.036282994, y: -0, z: -0, w: 0.9993416}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0}
-  m_LocalScale: {x: 6.3828, y: 0.10638001, z: 6.3828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.6, z: 0}
+  m_LocalScale: {x: 60.382797, y: 1.0063801, z: 60.382797}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -4.159, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1598961022 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7576481535285980487, guid: 6c0300368639f4d279ae912b5a59cd65,
@@ -1169,6 +1259,19 @@ MonoBehaviour:
   voiceText: {fileID: 1497425793}
   startRecordingClip: {fileID: 8300000, guid: 4d5ae8522446941449901e2d40f2b6ef, type: 3}
   stopRecordingClip: {fileID: 8300000, guid: 5c2788016876745c9bbf5bbb42c497a8, type: 3}
+  gripAnimationAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Grip Animation
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 943444b6-3cd2-43e8-920f-f86f34abb842
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1992921354
 GameObject:
   m_ObjectHideFlags: 0

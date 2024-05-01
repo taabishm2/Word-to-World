@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class SceneBuilder : MonoBehaviour
 {
@@ -167,6 +168,29 @@ public class SceneBuilder : MonoBehaviour
                 renderer.material.shader = urpLitShader;
             }
         }
+
+        // Check and add Rigidbody if not present
+        Rigidbody rb = instance.GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            rb = instance.AddComponent<Rigidbody>();
+            rb.useGravity = true; // Adjust as needed, e.g., based on whether the object should be affected by gravity
+        }
+
+        // Attach rigid body and then an XR grab interactable.
+        if (instance.GetComponent<XRGrabInteractable>() == null)
+        {
+            instance.AddComponent<BoxCollider>(); // Adds a BoxCollider to the new object
+
+            XRGrabInteractable grabInteractable = instance.AddComponent<XRGrabInteractable>();
+            // Optional: configure additional properties
+            Debug.Log("XRGrabInteractable added to " + instance.name);
+        }
+        else
+        {
+            Debug.LogWarning("XRGrabInteractable is already attached to " + instance.name);
+        }
+
         instance.transform.position = position; // Change to your desired location
         instance.transform.eulerAngles = rotation; // Change to your desired location
         instance.transform.localScale = scale; // Change to your desired scale
