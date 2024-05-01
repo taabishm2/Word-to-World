@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.46953866, g: 0.4917812, b: 0.3946154, a: 1}
+  m_IndirectSpecularColor: {r: 0.22308175, g: 0.24760702, b: 0.26942983, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneBuilder: {fileID: 2105220585}
-  generateSceneUrl: http://127.0.0.1:5555/create-scene
+  generateSceneUrl: http://34.133.232.227:5555/create-scene
   initialPrompt: a few houses and trees with a sunny day in a countryside
 --- !u!4 &1087568547
 Transform:
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneGenerator: {fileID: 1087568546}
-  gripActionReference: {fileID: 5667446173830999989, guid: 0be0028c24f2a4c14a96b6aa39055933,
+  gripActionReference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   rayInteractor: {fileID: 1418367433}
   voiceText: {fileID: 1497425793}
@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 2033627723}
-  bundleURL: http://127.0.0.1:8000/fbxassetbundle
+  bundleURL: http://34.133.232.227:8000/fbxassetbundle
 --- !u!4 &2105220586
 Transform:
   m_ObjectHideFlags: 0
