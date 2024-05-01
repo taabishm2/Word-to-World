@@ -57,29 +57,59 @@ def generate_initial_scene():
     create_asset_db(overwrite=False)
 
     chat_id, chat_obj = start_chat()
-
-    vals = {"scene": request.get_json()["prompt"]}
-    print("CREATING SCENE: ", vals["scene"])
-
-    # 1. Get a query to fetch assets
-    # asset_query = chat_obj.chat(
-    #     gpt_3_5_turbo,
-    #     get_prompt("design", "get_assets_query", vals),
-    # )
+    
+    response = request.get_json()
+    hitpoint = (response["hit_point"]["x"], response["hit_point"]["y"], response["hit_point"]["z"])
+    print("HITPOINT:", hitpoint)
+    
+    vals = {
+        "scene": response["prompt"],
+        "hitpoint_coord": hitpoint,
+        }
+    
+    print("CREATING SCENE:\n\n", vals["scene"])
+    
     asset_query = vals["scene"]
 
     # TODO: Set sampling size correctly
     # 2. Fetch the assets using the query
-    chat_obj.set_context(asset_query, 30)
+    chat_obj.set_context(asset_query, 15)
     chat_obj.clear_history()
-
-    # 3. Generate the scene
-    response = json.loads(
-        chat_obj.chat(
-            gpt_4,
-            get_prompt("design", "usr_msg", vals),
-        )
+    
+    response = chat_obj.chat(
+        gpt_3_5_turbo,
+        get_prompt("design", "usr_msg", vals),
     )
+    
+    print()
+    print(response)
+    print()
+    
+    # 3. Generate the scene
+    json_list = []
+    for e in [i.split(";") for i in response.split("\n")]:
+        pos = e[1].strip().replace("(", "").replace(")", "").split(",")
+        rot = e[2].strip().replace("(", "").replace(")", "").split(",")
+        json_list.append(
+            {
+                "name": e[0].strip(),
+                "position": {
+                    "x": int(pos[0].strip()),
+                    "y": int(pos[1].strip()),
+                    "z": int(pos[2].strip())
+                },
+                "rotation": {
+                    "x": int(rot[0].strip()),
+                    "y": int(rot[1].strip()),
+                    "z": int(rot[2].strip())
+                }
+            }
+        )
+        
+    print("Length of assets: ", len(json_list))
+    response = {
+        "assets": json_list,
+    }
     
     if len(SCALES_CACHE) == 0:
         SCALES_CACHE = get_scales()
@@ -95,9 +125,9 @@ def generate_initial_scene():
 
     response["chat_id"] = chat_id
     
-    print("\n"*3)
-    pprint(response)
-    print()
+    # print("\n"*3)
+    # pprint(response)
+    # print()
     
     return jsonify(response), 200
 

@@ -66,7 +66,7 @@ class Chat:
 
         self.history.add(usr_msg, response)
 
-        print(response)
+        # print("LLM RESPONSE:\n", response)
         return response
 
     def _chat(self, llm, usr_msg, more_context, ignore_history, ignore_context):
@@ -128,6 +128,9 @@ class Chat:
                 sys_msg_str += get_prompt("llm", "context", {"body": all_context})
         sys_msg_str = sys_msg_str.replace("{", "{{").replace("}", "}}")
 
+        print()
+        print(sys_msg_str)
+        print()
         chain.append(("system", sys_msg_str))
 
         # 3. Add history messages
@@ -143,16 +146,16 @@ class Chat:
 
 def parse_content(doc_content):
     json_doc = json.loads(doc_content)
-    res = f"Name: {json_doc['name']}\n"
+    res = f"Asset Name: '{json_doc['name']}'\n"
     res += f"Description: {json_doc['description']}\n"
-    res += f"Dimensions: X: {json_doc['dimensions']['x']}, Y: {json_doc['dimensions']['y']}, Z: {json_doc['dimensions']['z']}\n\n"
+    res += f"Dimensions: X: {json_doc['dimensions']['x']}, Y: {json_doc['dimensions']['y']}, Z: {json_doc['dimensions']['z']}"
     return res
 
 def prep_docs_for_query(docs):
     cleaned_docs = []
     for doc in docs:
         content = parse_content(doc.page_content)
-        cleaned_docs.append(f"\n{content}\n")
+        cleaned_docs.append(f"\n{content}")
 
     return "\n".join(cleaned_docs)
 
