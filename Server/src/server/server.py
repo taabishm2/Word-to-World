@@ -25,6 +25,8 @@ VECTOR_DB_PATH = "./db"
 SCALES_CACHE = dict()
 SCENE_JSON_PATH = "src/assets/GameObject.json"
 
+CHAT_OBJECT = None
+
 app = Flask(__name__)
 client = wrap_openai(openai.Client())
 
@@ -35,10 +37,16 @@ client = wrap_openai(openai.Client())
 
 
 def start_chat():
+    global CHAT_OBJECT
+    
     chat_id = str(uuid.uuid4())
 
     val = dict()
-    chat_obj = Chat(get_prompt("design", "sys_msg", val))
+    
+    if CHAT_OBJECT is None:
+        chat_obj = Chat(get_prompt("design", "sys_msg", val))
+    else:
+        chat_obj = CHAT_OBJECT
 
     CHAT_HISTORY[chat_id] = chat_obj
 
