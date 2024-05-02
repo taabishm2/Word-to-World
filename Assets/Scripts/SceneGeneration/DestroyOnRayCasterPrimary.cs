@@ -25,10 +25,10 @@ public class DestroyOnRayCasterPrimary : MonoBehaviour
     {
         interactable.hoverEntered.RemoveListener(HandleHoverEntered);
         interactable.hoverExited.RemoveListener(HandleHoverExited);
-        if (primaryButtonAction != null)
-        {
-            primaryButtonAction.action.Disable();
-        }
+        // if (primaryButtonAction != null)
+        // {
+        //     primaryButtonAction.action.Disable();
+        // }
     }
 
     private void HandleHoverEntered(HoverEnterEventArgs arg)
