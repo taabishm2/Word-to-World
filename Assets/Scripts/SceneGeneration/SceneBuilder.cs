@@ -5,10 +5,14 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class SceneBuilder : MonoBehaviour
 {
     public GameObject parentObject; // Assigned in the scene editor.
+
+    [SerializeField]
+    private InputActionReference deleteActionButton; // Assign this in the Inspector
 
     [Serializable]
     public class SceneGenerationRequest
@@ -230,6 +234,12 @@ IEnumerator SpawnAndScaleObject(GameObject loadedGameObject, Vector3 position, V
     {
         Debug.LogWarning("XRGrabInteractable is already attached to " + instance.name);
     }
+
+    // Add the destruction script to the new object
+    DestroyOnRayCasterPrimary destroyScript = instance.AddComponent<DestroyOnRayCasterPrimary>();
+
+    // Set the InputActionReference
+    destroyScript.SetPrimaryButtonAction(deleteActionButton);
 
     instance.transform.position = position; // Change to your desired location
     instance.transform.eulerAngles = rotation; // Change to your desired location

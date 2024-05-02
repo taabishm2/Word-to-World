@@ -1265,6 +1265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentObject: {fileID: 2033627723}
+  deleteActionButton: {fileID: 6800506839161742250, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
   clip: {fileID: 8300000, guid: 0ce36f1e299b24f25a54562f7994c35a, type: 3}
 --- !u!4 &2105220586
 Transform:
