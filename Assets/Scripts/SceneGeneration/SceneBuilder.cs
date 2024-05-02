@@ -36,6 +36,7 @@ public class SceneBuilder : MonoBehaviour
     private AudioSource audioSource; // AudioSource component
 
     public AudioClip clip;
+    public AudioClip fadeClip;
 
     [System.Serializable]
     public class APIResponse
@@ -240,6 +241,7 @@ IEnumerator SpawnAndScaleObject(GameObject loadedGameObject, Vector3 position, V
 
     // Set the InputActionReference
     destroyScript.SetPrimaryButtonAction(deleteActionButton);
+    destroyScript.SetAudioClip(fadeClip);
 
     instance.transform.position = position; // Change to your desired location
     instance.transform.eulerAngles = rotation; // Change to your desired location
