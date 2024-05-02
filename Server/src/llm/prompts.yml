@@ -18,12 +18,13 @@ design:
     
     Response Format:
     Your response MUST be a list of lines, each describing an asset to be placed in the scene.
-    Each line should have the following format: "<asset_name>; <position>; <rotation>"
+    Each line MUST ALWAYS have the following format: "<asset_name>; <position>; <rotation>"
     Example output:
     tree; (0, 10, 0); (2, 2, 0)
     bench; (0, -90, 10); (12, 4, 10)
     
-    Always follow this this format and never include explanations or other commentary, even in case of errors.
+    Do not skip any of the three parts of the format for any asset. No exceptions.
+    Always follow this format and never include explanations or other commentary, even in case of errors.
 
     Notes:
     1. In Unity x and z axes are horizontal and y axis is vertical.

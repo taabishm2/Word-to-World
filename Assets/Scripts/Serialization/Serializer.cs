@@ -11,6 +11,7 @@ public class Serializer : MonoBehaviour
     public Button serializeButton;
     public NetworkManager networkManager;
     public GameObject targetGameObject; 
+    public TextMeshProUGUI voiceText;
 
     void Start()
     {
@@ -24,6 +25,9 @@ public class Serializer : MonoBehaviour
     
     void TaskOnClick()
     {
+        voiceText.color = Color.yellow;
+        voiceText.text += "\nSaving Current Scene...";
+
         Debug.Log("Button Clicked");
         Debug.Log("Serializing " + targetGameObject.name + " with " + targetGameObject.transform.childCount + " children.");
         string serializedObject = SerializeGameObject(targetGameObject);

@@ -4,10 +4,24 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using TMPro;
+using System.IO;
+using System.Collections;
+using System.Collections.Generic;
+
+using UnityEngine;
+using UnityEngine.UI;
+using HuggingFace.API;
+using UnityEngine.Audio;
+using UnityEngine.Networking;
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class SceneBuilder : MonoBehaviour
 {
     public GameObject parentObject; // Assigned in the scene editor.
+    public TextMeshProUGUI voiceText;
 
     [Serializable]
     public class SceneGenerationRequest
@@ -186,6 +200,8 @@ IEnumerator SpawnAndScaleObject(GameObject loadedGameObject, Vector3 position, V
     }
 
     instance.transform.localScale = scale; // Ensure it ends at the correct scale
+    voiceText.color = Color.green;
+    voiceText.text += "\nFinshed generating scene.";
 }
 
     

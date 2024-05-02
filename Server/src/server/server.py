@@ -89,8 +89,11 @@ def generate_initial_scene():
     
     response = chat_obj.chat(
         gpt_3_5_turbo,
+        # gpt_4,
         get_prompt("design", "usr_msg", vals),
     )
+    
+    print(response)
     
     # 3. Generate the scene
     json_list = []
@@ -141,6 +144,7 @@ def generate_initial_scene():
 
 @app.route('/save', methods=['POST'])
 def save_game_object():
+    print("\nSave Game Request *****")
     if request.is_json:
         data = request.get_json()
         os.makedirs(os.path.dirname(SCENE_JSON_PATH), exist_ok=True)
