@@ -197,7 +197,18 @@ IEnumerator SpawnAndScaleObject(GameObject loadedGameObject, Vector3 position, V
     // Attach rigid body and then an XR grab interactable.
     if (instance.GetComponent<XRGrabInteractable>() == null)
     {
-        instance.AddComponent<BoxCollider>(); // Adds a BoxCollider to the new object
+         // Add a BoxCollider to this GameObject
+        BoxCollider boxCollider = instance.AddComponent<BoxCollider>();
+
+        // Set the size of the BoxCollider
+        Vector3 size = boxCollider.size;
+        size.y = 0.01f; // Set the Y size to 0.01
+        boxCollider.size = size;
+
+        // Adjust the center to the bottom of the GameObject
+        Vector3 center = boxCollider.center;
+        center.y = -0.5f * size.y; // Move the center to the bottom
+        boxCollider.center = center;
 
         XRGrabInteractable grabInteractable = instance.AddComponent<XRGrabInteractable>();
         // Optional: configure additional properties
