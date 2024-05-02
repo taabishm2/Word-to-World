@@ -15,7 +15,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class GripToSpeak : MonoBehaviour
 {
     public GameSceneGenerator gameSceneGenerator;
-    public InputActionReference gripActionReference; // Assign in the inspector
+    // public InputActionReference gripActionReference; // Assign in the inspector
     public XRRayInteractor rayInteractor;
 
     public TextMeshPro voiceText;
