@@ -11,6 +11,11 @@ public class DestroyOnRayCasterPrimary : MonoBehaviour
     private XRBaseInteractable interactable;
     private bool isHovered = false;
 
+    private bool isScaling = false;
+
+    public float scaleDuration = 1f; // Duration of the scaling animation
+    public AnimationCurve scaleCurve = AnimationCurve.Linear(0, 1, 1, 0); // Animation curve for scaling
+
     private AudioSource audioSource; // AudioSource component
 
     public AudioClip clip;
@@ -63,13 +68,32 @@ public class DestroyOnRayCasterPrimary : MonoBehaviour
     IEnumerator PlaySoundAndDestroy()
     {
         audioSource.PlayOneShot(clip); // Play the audio clip
-        yield return new WaitForSeconds(clip.length); // Wait for the clip to finish
+        // yield return new WaitForSeconds(clip.length); // Wait for the clip to finish
+
+        isScaling = true;
+
+        Vector3 originalScale = transform.localScale;
+        float timer = 0f;
+
+        while (timer < scaleDuration)
+        {
+            float scaleProgress = timer / scaleDuration;
+            float scaleValue = scaleCurve.Evaluate(scaleProgress);
+
+            transform.localScale = originalScale * scaleValue;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the object is scaled to zero before destroying
+        transform.localScale = Vector3.zero;
         Destroy(gameObject); // Destroy the GameObject after the clip has finished
     }
 
     private void Update()
     {
-        if (isHovered && primaryButtonAction.action.triggered)
+        if (isHovered && primaryButtonAction.action.triggered && !isScaling)
         {
             StartCoroutine(PlaySoundAndDestroy());
         }
