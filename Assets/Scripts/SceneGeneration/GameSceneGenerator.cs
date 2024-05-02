@@ -19,8 +19,6 @@ public class GameSceneGenerator : MonoBehaviour
 
     public void GenerateScene(string prompt, Vector3 hitPoint)
     {
-        
-
         StartCoroutine(sceneBuilder.GetAssetCatalog(URLS.w2w_server_url + "/create-scene", prompt, hitPoint, OnSuccess, OnError));
     }
 

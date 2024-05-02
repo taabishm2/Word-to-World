@@ -29,6 +29,10 @@ public class SceneBuilder : MonoBehaviour
         public Vector3 scale;
     }
 
+    private AudioSource audioSource; // AudioSource component
+
+    public AudioClip clip;
+
     [System.Serializable]
     public class APIResponse
     {
@@ -39,6 +43,12 @@ public class SceneBuilder : MonoBehaviour
     {
         parentObject.transform.position = Vector3.zero;
         parentObject.transform.rotation = Quaternion.identity;
+
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component
+        if (audioSource == null) {
+            Debug.LogWarning("AudioSource component missing, adding one.");
+            audioSource = gameObject.AddComponent<AudioSource>(); // Add AudioSource if not already added
+        }
     }
 
     private static string preparePayload(string prompt, Vector3 hitPoint)
@@ -70,6 +80,8 @@ public class SceneBuilder : MonoBehaviour
             {
                 string jsonResponse = uwr.downloadHandler.text;
                 APIResponse response = JsonUtility.FromJson<APIResponse>(jsonResponse);
+
+                audioSource.PlayOneShot(clip); // play spawn audio.
 
                 yield return StartCoroutine(SpawnAssets(response.assets, onSuccess, onError));
             }
@@ -151,9 +163,9 @@ public class SceneBuilder : MonoBehaviour
     }
 
     private void OnAssetLoaded(GameObject loadedGameObject, Vector3 position, Vector3 rotation, Vector3 scale)
-{
-    StartCoroutine(SpawnAndScaleObject(loadedGameObject, position, rotation, scale));
-}
+    {
+        StartCoroutine(SpawnAndScaleObject(loadedGameObject, position, rotation, scale));
+    }
 
 IEnumerator SpawnAndScaleObject(GameObject loadedGameObject, Vector3 position, Vector3 rotation, Vector3 scale)
 {
