@@ -207,7 +207,7 @@ IEnumerator SpawnAndScaleObject(GameObject loadedGameObject, Vector3 position, V
 
         // Adjust the center to the bottom of the GameObject
         Vector3 center = boxCollider.center;
-        center.y = -0.5f * size.y; // Move the center to the bottom
+        center.y = 5.0f * size.y; // Move the center to the bottom
         boxCollider.center = center;
 
         XRGrabInteractable grabInteractable = instance.AddComponent<XRGrabInteractable>();
