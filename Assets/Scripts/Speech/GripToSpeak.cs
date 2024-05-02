@@ -14,6 +14,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GripToSpeak : MonoBehaviour
 {
+
+        public InputActionProperty gripAnimationAction;
+
     public GameSceneGenerator gameSceneGenerator;
     public InputActionReference gripActionReference; // Assign in the inspector
     public XRRayInteractor rayInteractor;
@@ -37,35 +40,62 @@ public class GripToSpeak : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        gripActionReference.action.performed += HandleGripPress;
-        gripActionReference.action.canceled += HandleGripRelease;
-        gripActionReference.action.Enable();
-    }
+    // private void OnEnable()
+    // {
+    //     gripActionReference.action.performed += HandleGripPress;
+    //     gripActionReference.action.canceled += HandleGripRelease;
+    //     gripActionReference.action.Enable();
+    // }
 
-    private void OnDisable()
-    {
-        gripActionReference.action.performed -= HandleGripPress;
-        gripActionReference.action.canceled -= HandleGripRelease;
-        gripActionReference.action.Disable();
-    }
+    // private void OnDisable()
+    // {
+    //     gripActionReference.action.performed -= HandleGripPress;
+    //     gripActionReference.action.canceled -= HandleGripRelease;
+    //     gripActionReference.action.Disable();
+    // }
+      // private void OnEnable()
+    // {
+    //     gripActionReference.action.performed += HandleGripPress;
+    //     gripActionReference.action.canceled += HandleGripRelease;
+    //     gripActionReference.action.Enable();
+    // }
 
-    private void HandleGripPress(InputAction.CallbackContext context)
-    {
-        if (!isRecording)
-        {
+    // private void OnDisable()
+    // {
+    //     gripActionReference.action.performed -= HandleGripPress;
+    //     gripActionReference.action.canceled -= HandleGripRelease;
+    //     gripActionReference.action.Disable();
+    // }
+
+    void Update() {
+        // Get trigger, grip float value.
+        float gripValue = gripAnimationAction.action.ReadValue<float>();
+
+        if (gripValue > 0.5 && !isRecording) {
+            isRecording = true;
             StartRecording();
-        }
-    }
-
-    private void HandleGripRelease(InputAction.CallbackContext context)
-    {
-        if (isRecording)
+        } else if (gripValue < 0.5 && isRecording)
         {
+            isRecording = false;
             StopRecording();
         }
     }
+
+    // private void HandleGripPress(InputAction.CallbackContext context)
+    // {
+    //     if (!isRecording)
+    //     {
+    //         StartRecording();
+    //     }
+    // }
+
+    // private void HandleGripRelease(InputAction.CallbackContext context)
+    // {
+    //     if (isRecording)
+    //     {
+    //         StopRecording();
+    //     }
+    // }
 
     private void StartRecording()
     {
