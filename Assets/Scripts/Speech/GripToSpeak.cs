@@ -14,11 +14,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GripToSpeak : MonoBehaviour
 {
+
+        public InputActionProperty gripAnimationAction;
+
     public GameSceneGenerator gameSceneGenerator;
     public InputActionReference gripActionReference; // Assign in the inspector
     public XRRayInteractor rayInteractor;
 
-    public TextMeshPro voiceText;
+    public TextMeshProUGUI voiceText;
     public AudioClip startRecordingClip; // AudioClip for start recording
     public AudioClip stopRecordingClip; // AudioClip for stop recording
     
@@ -37,41 +40,68 @@ public class GripToSpeak : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        gripActionReference.action.performed += HandleGripPress;
-        gripActionReference.action.canceled += HandleGripRelease;
-        gripActionReference.action.Enable();
-    }
+    // private void OnEnable()
+    // {
+    //     gripActionReference.action.performed += HandleGripPress;
+    //     gripActionReference.action.canceled += HandleGripRelease;
+    //     gripActionReference.action.Enable();
+    // }
 
-    private void OnDisable()
-    {
-        gripActionReference.action.performed -= HandleGripPress;
-        gripActionReference.action.canceled -= HandleGripRelease;
-        gripActionReference.action.Disable();
-    }
+    // private void OnDisable()
+    // {
+    //     gripActionReference.action.performed -= HandleGripPress;
+    //     gripActionReference.action.canceled -= HandleGripRelease;
+    //     gripActionReference.action.Disable();
+    // }
+      // private void OnEnable()
+    // {
+    //     gripActionReference.action.performed += HandleGripPress;
+    //     gripActionReference.action.canceled += HandleGripRelease;
+    //     gripActionReference.action.Enable();
+    // }
 
-    private void HandleGripPress(InputAction.CallbackContext context)
-    {
-        if (!isRecording)
-        {
+    // private void OnDisable()
+    // {
+    //     gripActionReference.action.performed -= HandleGripPress;
+    //     gripActionReference.action.canceled -= HandleGripRelease;
+    //     gripActionReference.action.Disable();
+    // }
+
+    void Update() {
+        // Get trigger, grip float value.
+        float gripValue = gripAnimationAction.action.ReadValue<float>();
+
+        if (gripValue > 0.5 && !isRecording) {
+            isRecording = true;
             StartRecording();
-        }
-    }
-
-    private void HandleGripRelease(InputAction.CallbackContext context)
-    {
-        if (isRecording)
+        } else if (gripValue < 0.5 && isRecording)
         {
+            isRecording = false;
             StopRecording();
         }
     }
 
+    // private void HandleGripPress(InputAction.CallbackContext context)
+    // {
+    //     if (!isRecording)
+    //     {
+    //         StartRecording();
+    //     }
+    // }
+
+    // private void HandleGripRelease(InputAction.CallbackContext context)
+    // {
+    //     if (isRecording)
+    //     {
+    //         StopRecording();
+    //     }
+    // }
+
     private void StartRecording()
     {
-        Debug.Log("Recording started");
-        voiceText.color = Color.white;
-        voiceText.text = "Recording...";
+        voiceText.color = Color.yellow;
+        voiceText.text = "Recording started";
+        voiceText.text += "\nRecording...";
         audioSource.PlayOneShot(startRecordingClip); // Play start sound
         clip = Microphone.Start(null, false, 10, 44100);
         isRecording = true;
@@ -79,7 +109,8 @@ public class GripToSpeak : MonoBehaviour
 
     private void StopRecording()
     {
-        Debug.Log("Recording stopped");
+        voiceText.color = Color.white;
+        voiceText.text += "Recording stopped";
 
         RaycastHit hit;
         bool isHit = rayInteractor.TryGetCurrent3DRaycastHit(out hit);
@@ -109,15 +140,18 @@ public class GripToSpeak : MonoBehaviour
 
     private void SendRecording(Vector3 hitPoint) {
         voiceText.color = Color.yellow;
-        voiceText.text = "Sending...";
+        voiceText.text += "\nTranscribing...";
 
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             voiceText.color = Color.white;
-            voiceText.text = response;
+            voiceText.text += response;
+
+            voiceText.color = Color.yellow;
+            voiceText.text += "\n\nTalking to AI. Please wait...";
             gameSceneGenerator.GenerateScene(response, hitPoint);
         }, error => {
             voiceText.color = Color.red;
-            voiceText.text = error;
+            voiceText.text += error;
         });
     }
 }

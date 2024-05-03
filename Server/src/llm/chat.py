@@ -128,9 +128,9 @@ class Chat:
                 sys_msg_str += get_prompt("llm", "context", {"body": all_context})
         sys_msg_str = sys_msg_str.replace("{", "{{").replace("}", "}}")
 
-        print()
-        print(sys_msg_str)
-        print()
+        # print()
+        # print(sys_msg_str)
+        # print()
         chain.append(("system", sys_msg_str))
 
         # 3. Add history messages
