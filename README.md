@@ -2,7 +2,7 @@
 
 Speech to 3D scene generation using LLMs and RAG. Built for VR using Unity.
 
-![](https://github.com/taabishm2/Word-to-World/blob/main/clip1.gif)
+![](https://github.com/taabishm2/Word-to-World/blob/main/clipA.gif)
 
 ##  About
 
